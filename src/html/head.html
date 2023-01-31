@@ -1,0 +1,305 @@
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@@title</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/favicon/manifest.json">
+    <meta name="facebook-domain-verification" content="65y6b457zln08vttlbchszlo6xev3u"/>
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/icons/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <script>
+
+        let speakers = [
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Геращенко.jpg",
+                "name": "Антон Геращенко",
+                "desr": "Радник міністра внутрішніх справ, колишній заступник міністра внутрішніх справ України.  Народний депутат 8-го скликання\r\n",
+                "name_en": "",
+                "desr_en": "",
+                "fb": "https://www.facebook.com/anton.gerashchenko.7",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%BA%D0%BE_%D0%90%D0%BD%D1%82%D0%BE%D0%BD_%D0%AE%D1%80%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Судраба.jpg",
+                "name": "Інгуна Судраба",
+                "desr": "Державний контролер Латвії (з 2004 року по січень 2013 року). Засновник і керівник партії «Від серця для Латвії».",
+                "name_en": "",
+                "desr_en": "",
+                "fb": "",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%86%D0%BD%D0%B3%D1%83%D0%BD%D0%B0_%D0%A1%D1%83%D0%B4%D1%80%D0%B0%D0%B1%D0%B0"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Янченко.jpg",
+                "name": "Галина Янченко ",
+                "desr": "Народна депутатка України. Експерт з антикорупційної політики. Член Національної ради з питань антикорупційної політики (з 25 червня 2019). Заступниця голови фракції Політичної Партії «Слуга народу» У Верховній Раді України ІХ скликання. Голова ТСК з питань захисту прав інвесторів у Верховній раді України. Секретар Національної інвестиційної ради при Президентові України.",
+                "name_en": "",
+                "desr_en": "",
+                "fb": "https://www.facebook.com/halyna.yanchenko",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%AF%D0%BD%D1%87%D0%B5%D0%BD%D0%BA%D0%BE_%D0%93%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0_%D0%86%D0%B3%D0%BE%D1%80%D1%96%D0%B2%D0%BD%D0%B0"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Амелін.jpg",
+                "name": "Анатолій Амелін",
+                "desr": "Український Економіст. Співзасновник та директор економічних програм аналітичного центру “Український інститут майбутнього” Очолював Групу компаній “Альтана Капітал”. Працював у Національній Комісії з цінних паперів та фондового ринку (з 2011 року Член Національної Комісії).",
+                "name_en": "",
+                "desr_en": "",
+                "fb": "https://www.facebook.com/anatoliy.amelin",
+                "wiki": ""
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Федоров.jpg",
+                "name": "Михайло Федоров",
+                "desr": "Віцепрем'єр-міністр, міністр цифрової трансформації України в уряді Олексія Гончарука та Дениса Шмигаля. Ініціатор електронного сервісу державних послуг Дія. Наймолодший міністр в історії української політики. Народний депутат України IX скликання. ",
+                "name_en": "",
+                "desr_en": "",
+                "fb": "https://www.facebook.com/fedorov1991",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%A4%D0%B5%D0%B4%D0%BE%D1%80%D0%BE%D0%B2_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE_%D0%90%D0%BB%D1%8C%D0%B1%D0%B5%D1%80%D1%82%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Шуляк.jpg",
+                "name": "Шуляк Олена",
+                "desr": " Голова партії «Слуга народу» \r\nНародна депутатка України Верховної Ради України IX скликання, заступниця голови Комітету ВР з питань організації державної влади, місцевого самоврядування, регіонального розвитку та містобудування, голова Координаційної ради з вирішення проблемних питань у сфері містобудування при Президентові України, магістерка з бізнес-адміністрування, сертифікована аудиторка (з 1999 р.). В минулому топ-менеджерка у девелопменті та будівництві, віце-президент з фінансів української філії міжнародної організації Young Presidents’ Organization, екс-керівниця Наглядової ради Української будівельної спільноти (Ukrainian Building Community), екс-членкиня правління  Офісу ефективного регулювання, екс-підприємиця, співзасновниця Спілки українських підприємців.",
+                "name_en": "Olena Shulyak",
+                "desr_en": "Head of the \"Servant of the People\" party.\r\nMember of the Parliament of Ukraine of the 9th convocation, deputy head of the Committee of the Verkhovna Rada of Ukraine on the Organization of State Power, Local Self-Government, Regional Development and Urban Planning, head of the Coordinating Council for Solving Problematic Issues in the Field of Urban Planning under the President of Ukraine, master's degree in business administration, certified auditor ( since 1999). In the past, she was a top manager in development and construction, vice president of finance of the Ukrainian branch of the international organization Young Presidents' Organization, ex-head of the Supervisory Board of the Ukrainian Building Community, ex-member of the board of the Office of Effective Regulation, ex-entrepreneur, co-founder of the Union of Ukrainian ",
+                "fb": "https://www.facebook.com/ShuliakOlena",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%A8%D1%83%D0%BB%D1%8F%D0%BA_%D0%9E%D0%BB%D0%B5%D0%BD%D0%B0_%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D1%96%D1%97%D0%B2%D0%BD%D0%B0"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Зубко.jpg",
+                "name": "Зубко Геннадій",
+                "desr": "Віце-прем'єр-міністр — Міністр регіонального розвитку, будівництва та житлово-комунального господарства. Працював на вищезазначеній посаді  в другому уряді Арсенія Яценюка. 14 квітня 2016 увійшов до складу нового уряду Володимира Гройсмана. Брав активну участь у проведенні реформи децентралізації, яка передбачає зміни у галузях освіти, охорони здоров'я, соціальної політики, державного управління, органів місцевого самоврядування, розвитку міської інфраструктури, заходи з енергоефективності.",
+                "name_en": "Zubko Gennadiy",
+                "desr_en": "Deputy Prime Minister — Minister of Regional Development, Construction and Housing and Communal Services. He worked in the above position in the second government of Arseniy Yatsenyuk. On April 14, 2016, he joined the new government of Volodymyr Groysman. He took an active part in the decentralization reform, which involves changes in the fields of education, health care, social policy, state administration, local self-government bodies, urban infrastructure development, and energy efficiency measures.",
+                "fb": "https://www.facebook.com/profile.php?id=100018747485124",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%97%D1%83%D0%B1%D0%BA%D0%BE_%D0%93%D0%B5%D0%BD%D0%BD%D0%B0%D0%B4%D1%96%D0%B9_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Ілларіонов.jpg",
+                "name": "Ілларіонов Андрій",
+                "desr": "Працював радником з економічних питань двох прем’єр-міністрів і президента Росії.  Був шерпою (особистим представником) російського президента в «Групі Семи» і «Групі Восьми». Зіграв ключову роль у створенні Стабілізаційного фонду в Росії, введення 13%-ного прибуткового податку, раптову реформу державних фінансів, дострокову виплату державного боргу, перетворення «Групи семи» на «Групу восьми» і вступ до неї Росії. У результаті здійснення розробленої ним політики середньорічні темпи економічного зростання в Росії склали 7%, що дозволило за 10 років подвоїти російський ВВП і збільшити споживання російських громадян на душу населення в 2,3 рази. ",
+                "name_en": "Andrei Illarionov",
+                "desr_en": "Worked as an economic adviser with two Prime ministers and the President of Russia. He was a sherpa (personal representative) of the Russian president in \"Group Seven\" and \"Group Eight\". He played a key role in the creation of the Stabilization Fund in Russia, the introduction of a 13% income tax, the sudden reform of public finances, the early repayment of the public debt, the transformation of the Group of Seven into the Group of Eight, and Russia's entry into it. As a result of the implementation of the policy developed by him, the average annual rate of economic growth in Russia was 7%, which made it possible to double the Russian GDP in 10 years and increase the consumption of Russian citizens per capita by 2.3 times.",
+                "fb": "https://www.facebook.com/andrei.illarionov.7",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%86%D0%BB%D0%BB%D0%B0%D1%80%D1%96%D0%BE%D0%BD%D0%BE%D0%B2_%D0%90%D0%BD%D0%B4%D1%80%D1%96%D0%B9_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Єнін.jpg",
+                "name": "Єнін Євгеній ",
+                "desr": "Український дипломат і правник. Перший заступник Міністра внутрішніх справ України  з 6 вересня 2021 року. Член Комісії при Президентові України з питань громадянства. Агент України у справах України проти РФ у міжнародних судах. Обіймав посаду заступника Міністра закордонних справ України з 15 квітня 2020 року по 6 вересня 2021 року, посаду заступника Генерального прокурора України з 2016 по 2019 роки, радника-посланника Посольства України в Італії (2012—2016).",
+                "name_en": "Yevgeny Yenin",
+                "desr_en": "Ukrainian diplomat and lawyer. First Deputy Minister of Internal Affairs of Ukraine from September 6, 2021. Member of the Commission under the President of Ukraine on citizenship issues. Agent of Ukraine in cases of Ukraine against the Russian Federation in international courts. He held the position of Deputy Minister of Foreign Affairs of Ukraine from April 15, 2020 to September 6, 2021, the position of Deputy Prosecutor General of Ukraine from 2016 to 2019, adviser-envoy of the Embassy of Ukraine in Italy (2012-2016).",
+                "fb": "https://www.facebook.com/eugene.enin",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%84%D0%BD%D1%96%D0%BD_%D0%84%D0%B2%D0%B3%D0%B5%D0%BD%D1%96%D0%B9_%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Єхануров.jpg",
+                "name": "Єхануров Юрій ",
+                "desr": "Український політик, з липня 2009 по лютий 2010 — перший заступник Глави Секретаріату Президента України, з грудня 2007 по червень 2009 — Міністр оборони України. В 2005–2006 — Прем'єр-міністр України. Народний депутат України 3-го, 4-го, 5-го та 6-го скликань.",
+                "name_en": "Yekhanurov Yury",
+                "desr_en": "Ukrainian politician, from July 2009 to February 2010 - first deputy head of the Secretariat of the President of Ukraine, from December 2007 to June 2009 - Minister of Defense of Ukraine. In 2005–2006 — Prime Minister of Ukraine. Member of the Parliament of Ukraine of the 3rd, 4th, 5th and 6th convocations.",
+                "fb": "https://www.facebook.com/yekhanurov",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%84%D1%85%D0%B0%D0%BD%D1%83%D1%80%D0%BE%D0%B2_%D0%AE%D1%80%D1%96%D0%B9_%D0%86%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Войтек-Кутила.jpg",
+                "name": "Кутила Войтек ",
+                "desr": "Радник президента NIK (Вища палата контролю Республіки Польща), Віце-президент Вищої аудиторської служби Республіки Польща у 2012-2019 роках. Працював за проектами аудиту NIK, пов’язаними з виконанням державного бюджету, інфраструктурою, регіональним розвитком, фондами ЄС, навколишнім середовищем, сільським господарством. Контролював відносини NIK з міжнародними партнерами ",
+                "name_en": "",
+                "desr_en": "",
+                "fb": "",
+                "wiki": ""
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Загороднюк.jpg",
+                "name": "Загороднюк Андрій",
+                "desr": "15-й Міністр оборони України. Український підприємець, з 2014 волонтер, з 2015 керівник, потім член проектного офісу реформ при Міністерстві Оборони України, з липня 2019 член наглядової ради «Укроборонпрому».",
+                "name_en": "Andriy Zagorodnyuk",
+                "desr_en": "the 15th Minister of Defense of Ukraine. Ukrainian entrepreneur, a volunteer since 2014. Manager since 2015, then a member of the reform project office at the Ministry of Defense of Ukraine, since July 2019 a member of the Supervisory board of Ukroboronprom.",
+                "fb": "https://www.facebook.com/andrew.zagorodnyuk.7",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8E%D0%BA_%D0%90%D0%BD%D0%B4%D1%80%D1%96%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Саєнко.jpg",
+                "name": "Саєнко Олександр",
+                "desr": "Заслужений юрист України. Займав посаду Міністра Кабінету Міністрів України з 14 квітня 2016 року до 29 серпня 2019 року. В Уряді Володимира Гройсмана відповідав за реалізацію пріоритетних реформ та координацію роботи Секретаріату Кабміну і за взаємодію з Верховною Радою України. Очолював Офіс реформ Прем'єр-міністра України. Входив до складу Номінаційного комітету з відбору керівників особливо важливих для економіки державних підприємств.",
+                "name_en": "Sayenko Oleksandr",
+                "desr_en": "Honored lawyer of Ukraine. Minister of the Cabinet of Ministers of Ukraine from April 14, 2016 to August 29, 2019. In the Government of Volodymyr Groysman, he was responsible for the implementation of priority reforms and coordination of the work of the Secretariat of the Cabinet of Ministers and for interaction with the Verkhovna Rada of Ukraine. Head the Office of Reforms of the Prime Minister of Ukraine. He was a member of the Nomination Committee for the selection of managers of especially important for the economy of state-owned enterprises.",
+                "fb": "https://www.facebook.com/OSaienko",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%A1%D0%B0%D1%94%D0%BD%D0%BA%D0%BE_%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A1%D0%B5%D1%80%D0%B3%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Лещенко.jpg",
+                "name": "Лещенко Роман",
+                "desr": "Міністр аграрної політики та продовольства України з 17 грудня 2020 до 24 березня 2022 року, Голова Державної служби України з питань геодезії, картографії та кадастру (2020 р.), Уповноважений Президента України з земельних питань з 1 жовтня 2019 до 15 червня 2021 року",
+                "name_en": "Leshchenko Roman",
+                "desr_en": "Minister of Agrarian Policy and Food of Ukraine ( December 17, 2020 - March 24, 2022) Head of the State Service of Ukraine for Geodesy, Cartography and Cadaster (2020), Commissioner of the President of Ukraine for Land Affairs from October 1, 2019 to June 15, 2021 year.",
+                "fb": "https://www.facebook.com/RM.Leshchenko",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%9B%D0%B5%D1%89%D0%B5%D0%BD%D0%BA%D0%BE_%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Оніщук.jpg",
+                "name": "Оніщук Ольга",
+                "desr": " З вересня 2019 року по червень 2021 року обіймала посаду заступника Міністра юстиції України з питань державної реєстрації, опікувалася антирейдерським напрямом і питаннями державної реєстрації та нотаріату. Входила до складу Вищої кваліфікаційної комісії нотаріату,  працювала на посаді заступника голови ВККН.",
+                "name_en": "Olga Onishchuk ",
+                "desr_en": "From September 2019 to June 2021, she held the position of the Deputy Minister of Justice of Ukraine for state registration issues, took care of the anti-raider direction and issues of state registration and notary. She was a member of the High Qualification Commission of the Notary, worked as a deputy chairman of the High Qualification Commission of the Notary.",
+                "fb": "https://www.facebook.com/profile.php?id=100006056078422",
+                "wiki": ""
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Повов.jpg",
+                "name": "Попов Ігор ",
+                "desr": " Народний депутат України 8-го скликання.  Перший заступник Голови Національного агентства України з питань державної служби (з вересня 2011 до липня 2013), заступник Голови Секретаріату Президента України, Представник Президента України у Верховній Раді України (2009—2010). Голова правління Всеукраїнської громадської організації «Комітет виборців України» .",
+                "name_en": "Popov Ihor ",
+                "desr_en": "Member of the Parliament of Ukraine of the 8th convocation. First Deputy Head of the National Agency of Ukraine for Civil Service (from September 2011 to July 2013), Deputy Head of the Secretariat of the President of Ukraine, Representative of the President of Ukraine in the Verkhovna Rada of Ukraine (2009-2010). Chairman of the board of the All-Ukrainian public organization \"Committee of Voters of Ukraine\".",
+                "fb": "https://www.facebook.com/igor.popov.5283",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BF%D0%BE%D0%B2_%D0%86%D0%B3%D0%BE%D1%80_%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Камельчук.jpg",
+                "name": "Камельчук Юрій",
+                "desr": "Народний депутат України 9-го скликання. Член депутатської фракції Слуга народу. Коуч з розвитку. Засновник бізнес-спільноти Ukrainian Business Community, Платформи розвитку бізнесу «Бізнес Актив» та Cardinal University. Камельчук є стратегічним радником українських та міжнародних стартапів, благодійних фондів, керівників малого та середнього бізнесу. Організатор бізнес-форумів та семінарів.",
+                "name_en": "Yuriy Kamelchuk",
+                "desr_en": "Member of the Parliament of Ukraine of the 9th convocation. Member of the Servant of the People parliamentary faction. Development coach. Founder of the business community Ukrainian Business Community, Business Development Platform \"Business Active\" and Cardinal University. Kamelchuk is a strategic advisor to Ukrainian and international startups, charitable foundations, and managers of small and medium-sized businesses. Organizer of business forums and seminars.",
+                "fb": "https://www.facebook.com/kamelchuk",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BC%D0%B5%D0%BB%D1%8C%D1%87%D1%83%D0%BA_%D0%AE%D1%80%D1%96%D0%B9_%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Криклій.jpg",
+                "name": "Криклій Владислав ",
+                "desr": "Міністр інфраструктури України з 29 серпня 2019 до 18 травня 2021. Начальник Головного сервісного центру МВС України з листопада 2015 року. Головний реформатор сервісних центрів МВС.",
+                "name_en": "Krykliy Vladyslav",
+                "desr_en": "Minister of Infrastructure of Ukraine ( August 29, 2019 to May 18, 2021). Head of the Main Service Center of the Ministry of Internal Affairs of Ukraine since November 2015. The main reformer of service centers of the Ministry of Internal Affairs.",
+                "fb": "https://www.facebook.com/vladyslav.kryklii",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D0%BA%D0%BB%D1%96%D0%B9_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D1%81%D0%BB%D0%B0%D0%B2_%D0%90%D1%80%D1%82%D1%83%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Нойхауз.jpg",
+                "name": "Нойгауз Норберт",
+                "desr": "Німецький політолог . Колишній віце-мер німецького міста Трір. Один із теоретиків християнсько-демократичного руху Німеччини.",
+                "name_en": "Norbert Neuhaus",
+                "desr_en": "German political scientist. Former vice-mayor of the German city of Trier. One of the theorists of the Christian-democratic movement in Germany.",
+                "fb": "https://www.facebook.com/norbert.neuhaus.71",
+                "wiki": ""
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Фролов.jpg",
+                "name": "Фролов Павло ",
+                "desr": "Головний консультант Апарату Верховної Ради України. Народний депутат України IX скликання від  партії Слуга народу. Працював начальником самостійного Відділу забезпечення взаємодії з Верховною Радою України та координації законотворчої роботи Державного комітету природних ресурсів України.\r\n",
+                "name_en": "Pavlo Frolov ",
+                "desr_en": "Chief-consultant of the Staff of the Verkhovna Rada of Ukraine. Member of the Parliament of Ukraine of the 9th convocation from the” Servant of the People” party. He worked as the head of the independent Department for ensuring interaction with the Verkhovna Rada of Ukraine and coordinating the law-making work of the State Committee for Natural Resources of Ukraine.",
+                "fb": "https://www.facebook.com/pavlo.frolov.5",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%A4%D1%80%D0%BE%D0%BB%D0%BE%D0%B2_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE_%D0%92%D0%B0%D0%BB%D0%B5%D1%80%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Денисенко.jpg",
+                "name": "Денисенко Вадим ",
+                "desr": "Журналіст, бізнесмен, народний депутат України 8 скликання. Виконавчий директор Українського Інституту Майбутнього. Засновник і головний редактор ЕспресоTV. Автор монографії “Модерн як поле експерименту”, двох збірок оповідань: “У пошуках банальних істин” та “Кілька історій про кохання”, а також співавтор книги “Політики не брешуть”.",
+                "name_en": "Denysenko Vadym",
+                "desr_en": "Journalist, businessman, Member of the Parliament of Ukraine of the 8th convocation. Executive Director of the Ukrainian Future Institute. Founder and editor-in-chief of EspressoTV. Author of the monograph \"Modern as a Field of Experimentation\", two collections of short stories: \"In Search of Banal Truths\" and \"Several Love Stories\", as well as co-author of the book \"Politicians don't Lie\".",
+                "fb": "https://www.facebook.com/vadym.denysenko.1",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D0%B8%D1%81%D0%B5%D0%BD%D0%BA%D0%BE_%D0%92%D0%B0%D0%B4%D0%B8%D0%BC_%D0%86%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Андрусів.jpg",
+                "name": "Андрусів Віктор",
+                "desr": "Політичний та громадський діяч, заступник Голови Донецької військово-цивільної адміністрації з гуманітарних питань (2015-2016), радник голови Міністерства внутрішніх справ України та керівника Офісу Президента, Засновник волонтерського проєкту «Добробат», координатор проєкту «Ищи своих», кандидат політичних наук, аналітик і публіцист.",
+                "name_en": "Viktor Andrusiv",
+                "desr_en": "Political and public figure, Deputy Head of the Donetsk military-civilian administration for humanitarian issues (2015-2016), adviser to the head of the Ministry of Internal Affairs of Ukraine and the head of the President's Office, founder of the \"Dobrobat\" volunteer project, coordinator of the \"Ищи своих\" ( “Look for Your Own”) project, candidate of political science, analyst and publicist.",
+                "fb": "https://www.facebook.com/victor.andrusiv",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%90%D0%BD%D0%B4%D1%80%D1%83%D1%81%D1%96%D0%B2_%D0%92%D1%96%D0%BA%D1%82%D0%BE%D1%80_%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Галасюк.jpg",
+                "name": "Галасюк Віктор",
+                "desr": "Народний депутат України VIII скликання, голова парламентського Комітету з питань промислової політики та підприємництва, співголова депутатської групи Верховної Ради України з міжпарламентських зв’язків з США, заступник голови Української частини Парламентського Комітету Асоціації.  Визнаний №2 в рейтингу ефективності законотворчої діяльності серед більше ніж 400 депутатів VIII скликання. Є автором-розробником понад 20 прийнятих парламентом економічних законів, спрямованих на поліпшення інвестиційного клімату, підтримку малого та середнього підприємництва, розвиток промисловості та сприяння експорту.",
+                "name_en": "Viktor Halasiuk",
+                "desr_en": "Member of the Parliament of Ukraine of the 8th convocation, chairman of the Parliamentary Committee on Industrial Policy and Entrepreneurship, co-chairman of the parliamentary group of the Verkhovna Rada of Ukraine on inter-parliamentary relations with the USA, deputy chairman of the Ukrainian part of the Parliamentary Committee of the Association. Recognized No. 2 in the rating of effectiveness of law-making activity among more than 400 deputies of the 8th convocation. He is the author-developer of more than 20 economic laws adopted by the parliament aimed at improving the investment climate, supporting small and medium-sized enterprises, developing industry and promoting exports.",
+                "fb": "https://www.facebook.com/Halasiuk",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%93%D0%B0%D0%BB%D0%B0%D1%81%D1%8E%D0%BA_%D0%92%D1%96%D0%BA%D1%82%D0%BE%D1%80_%D0%92%D0%B0%D0%BB%D0%B5%D1%80%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Бно-Айріян.jpg",
+                "name": "Бно-Айріян Михайло ",
+                "desr": "Український дипломат, управлінець, заступник директора ДП НЕК «Укренерго» з комунікацій та міжнародного співробітництва, режисер. З 10 липня до 28 жовтня 2019 року — Голова Київської ОДА. Автор проєкту «7 фільмів Бно-Айріяна».",
+                "name_en": "Mykhailo Bno-Airiian",
+                "desr_en": "Ukrainian diplomat, manager, deputy director of SE NEC \"Ukrenergo\" for communications and international cooperation, director. From July 10 to October 28, 2019 — Head of the Kyiv Regional State Administration. The author of the project \"7 films of Bno-Airiian\".",
+                "fb": "https://www.facebook.com/BnoAiriian",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%91%D0%BD%D0%BE-%D0%90%D0%B9%D1%80%D1%96%D1%8F%D0%BD_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE_%D0%9A%D0%B0%D1%80%D0%B5%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Громенко.jpg",
+                "name": "Громенко Сергій",
+                "desr": "Український історик, публіцист та громадський діяч, кандидат історичних наук, співробітник Українського інституту національної пам'яті (2014—2016), оглядач проєкту Крим.Реалії від Радіо Свобода, учасник громадського просвітницького проєкту з популяризації історії України «Лікбез. Історичний фронт». Лавреат V Міжнародного конкурсу ім. Єжи Ґедройця (2011), фіналіст ХХІ Всеукраїнського рейтингу «Книжка року 2019»",
+                "name_en": "Hromenko Serhiy",
+                "desr_en": "Ukrainian historic scientist, publicist and public figure, candidate of historical sciences, employee of the Ukrainian Institute of National Remembrance (2014-2016), columnist of the Krym.Realii project from Radio Liberty, participant of the public educational project to popularize the history of Ukraine \"Likbez. Historical front\". Winner of the 5th International Competition named after Jerzy Gedroitsa (2011), finalist of the 21st All-Ukrainian \"Book of the Year 2019\" rating.",
+                "fb": "https://www.facebook.com/sergii.gromenko",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%93%D1%80%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BE_%D0%A1%D0%B5%D1%80%D0%B3%D1%96%D0%B9_%D0%92%D1%96%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Шкрум.jpg",
+                "name": "Шкрум Альона",
+                "desr": "Народний депутат України VIII скл. Юрист-міжнародник за фахом, здобула три дипломи про вищу освіту, громадська діячка, у тому числі у сфері захисту і забезпечення прав внутрішньо переміщених осіб.",
+                "name_en": "Alyona Shkrum ",
+                "desr_en": "Member of the Parliament of Ukraine VIII convocation International lawyer by profession, obtained three diplomas of higher education, public activist, including in the field of protection and ensuring the rights of internally displaced persons.",
+                "fb": "https://www.facebook.com/alyxrum",
+                "wiki": "https://uk.wikipedia.org/wiki/%D0%A8%D0%BA%D1%80%D1%83%D0%BC_%D0%90%D0%BB%D1%8C%D0%BE%D0%BD%D0%B0_%D0%86%D0%B2%D0%B0%D0%BD%D1%96%D0%B2%D0%BD%D0%B0"
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Луценко.jpg",
+                "name": "Луценко Дмитро",
+                "desr": "Кандидат юридичних наук, адвокат. Керівник офісу секретаря національної інвестиційної ради України",
+                "name_en": "Dmytro Lutsenko ",
+                "desr_en": "candidate of legal sciences, lawyer. Head of the Office of the Secretary of the National Investment Council of Ukraine",
+                "fb": "https://www.facebook.com/profile.php?id=100001647587563",
+                "wiki": ""
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Чебаненко.jpg",
+                "name": "Чебаненко Олександр ",
+                "desr": "Директор програми “Право” Українського Інституту Майбутнього. Магістр права (Університет Амстердаму (LLM) та Московський Державний Університет), адвокат. Брав участь в розробці законопроєктів за наступними напрямками: лобіювання, спеціальна конфіскація, інформаційна безпека, азартні ігри, корисні копалини, державні закупівлі, електронна комерція, оподаткування, суд присяжних тощо.",
+                "name_en": "Oleksandr Chebanenko",
+                "desr_en": "Director of the \"Law\" program of the Ukrainian Future Institute. Master of Laws (University of Amsterdam (LLM) and Moscow State University), lawyer. Participated in the development of draft laws in the following areas: lobbying, special confiscation, information security, gambling, minerals, public procurement, e-commerce, taxation, jury trial, etc.",
+                "fb": "https://www.facebook.com/profile.php?id=100011748034990",
+                "wiki": ""
+            },
+            {
+                "photo": "https://kspa.com.ua/wp-content/uploads/2022/11/Тишкевич.jpg",
+                "name": "Тишкевич Ігор",
+                "desr": "Експерт програми “Міжнародна і внутрішня політика” Українського Інституту Майбутнього. У якості аналітика співпрацював із Білоруським інститутом стратегічних досліджень (BISS) та Belarus Security Blog. Надавав консультаційні послуги з політичної реклами для National Democratic Institute. Обіймав посаду голови правління Агентства регіонального розвитку «Варута» (Білорусь), виконавчого директора в Асамблеї депутатів місцевих рад.Розробив низку навчальних програм та тренінгів з комунікацій, політичних кампаній.",
+                "name_en": "Ihor Tyshkevich",
+                "desr_en": "Expert of the \"International and Domestic Policy\" program of the Ukrainian Future Institute. As an analyst, he cooperated with the Belarusian Institute of Strategic Studies (BISS) and the Belarus Security Blog. Provided consulting services on political advertising for the National Democratic Institute. He held the position of chairman of the board of the Regional Development Agency \"Varuta\" (Belarus), executive director of the Assembly of Deputies of Local Councils. Developed a number of educational programs and trainings on communications and political campaigns.",
+                "fb": "https://www.facebook.com/Ihar.Tyshkevich",
+                "wiki": ""
+            }
+        ]
+        let isEn = false;
+        const path = 'https://kspa.com.ua/wp-content/themes/kspa/'
+        const reviews = [
+            {
+                "postId": 5906,
+                "course": "Волонтерство. Благодійність. Гроші",
+                "review": "Вітаю, добродійна спільнота! Щиро дякуємо ще раз за такий професійний  курс від КШДУ під \"крилом\" Лєри Татарчук та команди!!! Все - від змісту навчання, тренерів, до організації було на найвищому рівні! Окремої уваги заслуговує атмосфера,яка панує у школі. Не втрачайте її! З першого кроку ми поринули у якусь особливу історію- історію про ДОБРО, ЛЮДЕЙ, УКРАЇНУ і ПЕРЕМОГУ. Коли саме оці слова стоять на першому місці, тоді  ГРОШІ на всі ідеї, проєкти, ініціативи завжди знайдуться. Де їх шукати, і  в якому напрямі рухатися - Ви з нами щедро поділилися! МAMA CAMP - не фонд, не ГО. Ми не зареєстровані. Наша волонтерська ініціатива \"народжена\" в окупації(м.Бердянськ), спочатку це був сімейний прихисток і допомога з подальшою евакуацією для людей із Маріуполя, тих, хто тікав від бомбардувань, трошки пізніше додалася гуманітарна і психологічна  допомога мамам і з дітьми.. Раніше ми не могли показувати відкрито у соцмережах, що ми робимо, бо це було небезпечно для нас. Тепер інша історія. Ми на вільній території України і впевнені, що зможемо робити багато корисного для жінок і дітей ВПО, бо їх дуже багато і ми хочемо, щоб вони не загубили себе і мали можливість виховувати дітей, розвиватися, самореалізовуватися, навчатися, працювати, мати сили і ресурси жити життя, піклуючись про майбутнє України і наближуючи перемогу- кожна на своєму фронті. Отож, ми на самому початку свого шляху, це ПЕРШЕ наше з донькою навчання у Києві, і ми навіть мріяти не могли,що воно буде таким якісним, змістовним і в такому классному осередку. У кожного з Вас є чому повчитися, це дуже цінно. Окрема подяка, що ласкаво прийняли маленьку волонтерку у групу з навчання. Люба теж у захваті) і передає всім вітання! Якщо Ваші проєкти націлені на жінок, дітей, ми завжди раді бути корисними, допомогти якщо треба навіть операційною звичайною діяльністю на абсолютно волонтерських засадах. До війни у нас був дитячий центр розвитку - садочок , тож ми  знаємо специфіку роботи з дітьми і їх батьками. Завжди раді бути корисними у цьому напрямку. Ще раз ДЯКУЄМО і плідної праці на благодійній ниві!!! Разом до перемоги! Завжди відкриті новим друзям і колегам у соцмережах.",
+                "author": "Марія Шурденко"
+            }
+        ]
+    </script>
+</head>

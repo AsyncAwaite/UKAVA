@@ -1,0 +1,48 @@
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-gradient{
+  background: linear-gradient(180deg, #F2E6CF 0%, #BCAA88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.icon-phone:before {
+  content: "\e900";
+}
+.icon-payment:before {
+  content: "\e901";
+}
+.icon-clock-fast:before {
+  content: "\e903";
+}
+.icon-coffee-maker:before {
+  content: "\e904";
+}
+.icon-interface:before {
+  content: "\e906";
+}
+.icon-message:before {
+  content: "\e907";
+}
+.icon-ic:before {
+  content: "\e908";
+}
+.icon-account:before {
+  content: "\e90a";
+}
+.icon-ruler-square:before {
+  content: "\e90b";
+}

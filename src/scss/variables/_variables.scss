@@ -1,0 +1,28 @@
+
+$bage: #FFF7E8;
+$darkGreen: #00732E;
+$white: rgba(254, 254, 254, 1);
+$send: #BCAA88;
+
+$maxWidth: 1440;
+$minWidth: 375;
+
+
+:root {
+//  --container-width: #{gem(1200)};
+//  --footer-heigh: gem(103);
+  --header-height: #{gem(108)};
+}
+//
+//@media all and (max-width: 1024px) {
+//  :root {
+//    --container-width: #{gem(678)};
+//  }
+//
+//}
+//@media all and (max-width: 480px) {
+//  :root {
+//    --container-width: #{gem(345)};
+//  }
+//}
+@import "src/scss/variables/variables-typography";

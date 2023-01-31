@@ -1,0 +1,17 @@
+@import '../variables/variables';
+.menu{
+  &__item{
+    margin: 0 gem(15);
+  }
+  @media (max-width: 1024px){
+  flex-direction: column;
+    text-align: center;
+    &__item{
+      margin: 0 0 gem(40) 0;
+    }
+  }
+
+
+}
+
+

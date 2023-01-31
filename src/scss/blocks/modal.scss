@@ -1,0 +1,57 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(228, 228, 228, 0.5);
+  backdrop-filter: blur(2.5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  padding: gem(20);
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+
+  &__wrapper {
+    overflow: hidden;
+  }
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+
+    .modal__body {
+      padding: 0;
+    }
+
+    .modal__wrapper {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s;
+  }
+
+  &__close {
+    //border: none;
+    //padding: g2;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    //width: 4rem;
+    //height: 4rem;
+    //bottom: 2rem;
+    //right: 2rem;
+    //z-index: 5;
+    //transform: scale(-1, -1);
+  }
+
+
+
+
+}

@@ -1,0 +1,146 @@
+@import "func";
+@import "src/scss/variables/variables";
+
+//HEADERS
+h1, .h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+}
+
+h2, .h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+}
+
+
+h4, .h4 {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+}
+
+
+//FONTS
+.f {
+  &-weight {
+    &--400 {
+      font-weight: 400;
+    }
+
+    &--500 {
+      font-weight: 500;
+    }
+
+    &--600 {
+      font-weight: 600;
+    }
+
+    &--700 {
+      font-weight: 700;
+    }
+
+  }
+
+}
+
+//TEXT
+.text {
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-color {
+    &--primary {
+      color: $send;
+    }
+  }
+}
+
+//ELIPSE
+
+.elipse {
+  background: #5B5144;
+  filter: blur(150px);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-inline {
+  display: inline-flex;
+}
+
+.--wrap {
+  flex-wrap: wrap;
+}
+
+.--just-between {
+  justify-content: space-between;
+}
+
+
+.--just-center {
+  justify-content: center;
+}
+
+.--just-start {
+  justify-content: start;
+}
+
+.--just-end {
+  justify-content: flex-end;
+}
+
+.--align-str {
+  align-items: stretch;
+}
+
+.--align-start {
+  align-items: start;
+}
+
+.--align-center {
+  align-items: center;
+}
+
+.--align-end {
+  align-items: flex-end;
+}
+
+.--self-end {
+  align-self: end;
+}
+
+.--dir-col {
+  flex-direction: column;
+}
+
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pos-a {
+  position: absolute;
+}
+
+.pos-r {
+  position: relative;
+}
+

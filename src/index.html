@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Школа, де відроджується держава"
+})
+
+<body class="body">
+<div class="page-container">
+    <div class="progress-bar">
+        <div id="progress-bar"></div>
+    </div>
+
+    @@include('html/header.html',{})
+    <main>
+        <section class="main-screen">
+            <div class="main-screen__wrapper">
+                <div class="container pos-r">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="main-screen__info">
+                                <h1 class="text-uppercase main-screen__title">
+                                    <div class="text-color--primary f-weight--700">
+                                        UKAVA
+                                    </div>
+                                    <div class="h2">ТВОЯ ТОЧКА ПІДЗАРЯДКИ СМАЧНОЮ КАВОЮ</div>
+                                </h1>
+                                <a href="#" class="btn"><span>ОТРИМАТИ БІЗНЕСПЛАН</span></a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="main-screen__img pos-r">
+                                <div class="image">
+                                    <img src="@img/coffe-auto-preview.png" alt="">
+                                </div>
+                                <div class="elipse"></div>
+                                <div class="main-screen__decor">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+    @@include('html/footer.html',{})
+</div>
+@@include('html/modal.html',{})
+@@include('html/svg.html',{})
+
+<script src="app.min.js"></script>
+</body>
+
+</html>

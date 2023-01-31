@@ -8,6 +8,7 @@ node_modules/
 gulp/version.json
 package-lock.json
 .vscode/
+dist/icons
 # Compiled Java class files
 *.class
 
@@ -50,3 +51,5 @@ Thumbs.db
 *.wmv
 
 gulp/version.json
+/dist/assets/fonts/
+/dist/assets/icons/

@@ -3,7 +3,7 @@
   // FONT-SIZE
   --font-size-h1: #{gem(60)};
   --font-size-h2: #{gem(40)};
-  --font-size-h3: #{gem(24)};
+  --font-size-h3: 24px;
   --font-size-h4: #{gem(20)};
   @media all and (max-width: 1024px) {
     --font-size-h1: #{gem(52)};
@@ -17,12 +17,11 @@
   //LINE-HEIGHT
   --line-height-h1: #{gem(70)};
   --line-height-h2: #{gem(48)};
-  --line-height-h3: #{gem(28)};
+  --line-height-h3: 24px;
   --line-height-h4: #{gem(24)};
   @media all and (max-width: 1024px) {
     --line-height-h1: #{gem(62)};
     --line-height-h2: #{gem(40)};
-    --line-height-h3: #{gem(22)};
   }
   @media all and (max-width: 480px) {
     --line-height-h1: #{gem(56)};

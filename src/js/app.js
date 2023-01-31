@@ -38,7 +38,7 @@ function headerFixed() {
     if (header) {
         window.addEventListener("scroll", () => {
             try {
-                if (scrollY >= header.clientHeight ) {
+                if (scrollY >= header.clientHeight / 2 ) {
                     header.classList.add("--fixed");
                 } else {
                     header.classList.remove("--fixed");

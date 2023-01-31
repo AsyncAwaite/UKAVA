@@ -1,0 +1,46 @@
+
+.about {
+  p {
+    font-size: size(20, 16);
+    line-height: size(24, 18);
+
+
+    @media (max-width: 1024px){
+      margin-bottom: gem(80);
+    }
+    @media (max-width: 767px){
+      margin-bottom: gem(50);
+    }
+  }
+
+  &__item {
+    .title {
+      font-size: size(48, 32);
+      line-height: size(56, 38);
+    }
+
+    margin-bottom: gem(30);
+    @media (max-width: 1024px) {
+      width: 260px;
+      margin: 0 auto gem(30);
+
+    }
+    @media (max-width: 767px) {
+      margin-bottom: gem(25);
+    }
+  }
+
+  &__items {
+    @media (max-width: 1024px){
+      display: flex;
+
+      flex-wrap: wrap;
+    }
+    @media (max-width: 767px){
+      flex-direction: column;
+    }
+
+    //
+
+  }
+}

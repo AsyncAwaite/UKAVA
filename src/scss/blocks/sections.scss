@@ -1,4 +1,15 @@
 .section {
   position: relative;
   z-index: 0;
+  padding: gem(60) 0;
+  h2{
+    margin-bottom: gem(60);
+    font-weight: 600;
+    @media (max-width: 1024px){
+      margin-bottom: gem(30);
+    }
+    span{
+      color: $darkGreen;
+    }
+  }
 }

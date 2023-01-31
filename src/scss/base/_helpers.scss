@@ -15,6 +15,12 @@ h2, .h2 {
   z-index: 1;
   position: relative;
 }
+h3, .h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  z-index: 1;
+  position: relative;
+}
 
 
 h4, .h4 {
@@ -55,6 +61,9 @@ h4, .h4 {
   &-color {
     &--primary {
       color: $send;
+    }
+    &--green{
+      color: $darkGreen;
     }
   }
 }

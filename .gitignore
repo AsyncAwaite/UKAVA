@@ -53,3 +53,5 @@ Thumbs.db
 gulp/version.json
 /dist/assets/fonts/
 /dist/assets/icons/
+/dist/assets/icons/
+/dist/assets/fonts/

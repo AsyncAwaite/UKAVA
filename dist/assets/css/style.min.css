@@ -1423,7 +1423,7 @@ h4 {
 }
 @media (max-width:370px) {
   .container {
-    padding: 0 1.5rem
+    padding: 0 .15rem
   }
 }
 .wrapper {
@@ -2311,6 +2311,7 @@ a:hover {
     height: .9rem;
     filter: blur(75px);
     background-color: #fff7e8;
+    border-radius: 50%;
     z-index: -1
   }
   .header__icon::after {

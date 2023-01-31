@@ -52,9 +52,6 @@
 
 .burger {
   display: none;
-  //border: none;
-  //width: gem(30);
-  //height: gem(20);
   align-items: center;
   flex-shrink: 0;
   background: transparent;
@@ -81,6 +78,7 @@
     height: 3px;
     border-radius: 3px;
     background: linear-gradient(180deg, #F2E6CF 0%, #BCAA88 100%);
+    transform-style: preserve-3d;
 
   }
 
@@ -92,8 +90,6 @@
 
   &::before, &::after {
     content: '';
-
-
     transition: all 0.35s linear;
   }
 
@@ -111,7 +107,7 @@
   &.active {
     //margin-bottom: 3rem;
     span {
-      transform: translate3d(0, 0, 0) rotate(45deg);
+      transform: translate3d(0, 0, 0);
       width: 0;
 
     }

@@ -1,15 +1,19 @@
 @import "func";
-@import "src/scss/variables/variables";
+@import "../../../../starter_UKAVA/src/scss/base/variables/variables";
 
 //HEADERS
 h1, .h1 {
   font-size: var(--font-size-h1);
   line-height: var(--line-height-h1);
+  z-index: 5;
+  position: relative;
 }
 
 h2, .h2 {
   font-size: var(--font-size-h2);
   line-height: var(--line-height-h2);
+  z-index: 1;
+  position: relative;
 }
 
 

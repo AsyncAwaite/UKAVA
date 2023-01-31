@@ -1,6 +1,6 @@
 .main-screen {
   height: 100vh;
-  padding-top: var(--header-height);
+  padding: var(--header-height) 0 gem(60);
 
   &::before {
     width: 62.5%;
@@ -12,17 +12,28 @@
     position: absolute;
     background: url('@img/coffee-main-screen.png') no-repeat top  / contain;
     z-index: 4;
+    @media (max-width: 1024px) {
+      background: url('@img/coffee-main-screen-tablet.png') no-repeat center right  / contain;
+    }
+
   }
 
   &__wrapper {
     margin-top: gem(40);
-    //display: flex;
-    //height: 100%;
+    @media (max-width: 1024px) {
+      margin-top: gem(20);
+    }
+    @media (max-width: 767px){
+      margin-top: 0;
+    }
   }
 
   &__info {
     position: relative;
     margin-top: gem(100);
+    @media (max-width: 1024px) {
+      margin-top: gem(80);
+    }
   }
 
   &__title {
@@ -56,6 +67,49 @@
       z-index: 5;
     }
 
+    @media (max-width: 1024px) {
+      position: static;
+      .image {
+        position: absolute;
+        width: gem(600);
+        max-height: gem(800);
+        top: gem(100);
+
+        img {
+          object-position: left;
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      position: relative;
+      padding-top: gem(100);
+      &::before{
+        //width: 100%;
+        height: 100%;
+        top: 0;
+        left: gem(-15);
+        right: gem(-15);
+        content: '';
+        position: absolute;
+        background: url('@img/coffee-main-screen-mobile.png') no-repeat center   / contain;
+      }
+
+      .image {
+        width: 100%;
+        top: 0;
+        position: relative;
+
+        img {
+          object-position: center;
+        }
+
+      }
+    }
+    @media (max-width: 600px){
+    &::before{  background-size: cover;}
+
+    }
+
   }
 
   .elipse {
@@ -63,6 +117,21 @@
     top: 0;
     height: 100%;
     width: 100%;
+    @media (max-width: 1024px) {
+      width: gem(500);
+      height: gem(500);
+      top: 50%;
+      right: 0;
+      transform: translate(50%, -50%);
+
+    }
+    @media (max-width: 767px) {
+      right: auto;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: gem(350);
+      height: gem(350);
+    }
   }
 
   &__decor {
@@ -114,26 +183,166 @@
         animation: coffee-4 6s linear infinite, drop-shadow 7s linear infinite;
 
       }
+
       &:nth-child(5) {
         width: gem(80);
         height: gem(50);
         bottom: gem(-20);
         left: gem(-35);
         transform: rotate(340deg);
-        animation: coffee-6 6s linear infinite, drop-shadow 7s linear infinite;
+        animation: coffee-5 6s linear infinite, drop-shadow 7s linear infinite;
 
       }
+
       &:nth-child(6) {
         width: gem(55);
         height: gem(35);
         top: gem(-60);
         right: gem(-35);
-        transform: scale(-1,1);
-        animation: coffee-7 6s linear infinite, drop-shadow 7s linear infinite;
+        transform: scale(-1, 1);
+        animation: coffee-6 6s linear infinite, drop-shadow 7s linear infinite;
 
       }
     }
 
+    @media (max-width: 1024px) {
+      width: 50%;
+      left: auto;
+      right: 0;
+      span {
+
+        &:nth-child(1) {
+          top: 50%;
+          left: 20%;
+          width: gem(55);
+          height: gem(35);
+        }
+
+        &:nth-child(2) {
+          width: gem(50);
+          height: gem(30);
+          top: 0;
+          left: 50%;
+          top: gem(100);
+        }
+
+        &:nth-child(3) {
+          display: none;
+        }
+
+        &:nth-child(4) {
+          width: gem(75);
+          height: gem(45);
+          top: gem(120);
+          left: 0;
+          right: auto;
+        }
+
+        &:nth-child(5) {
+          width: gem(55);
+          height: gem(35);
+          bottom: gem(60);
+          left: 20%;
+        }
+
+        &:nth-child(6) {
+          top: var(--header-height);
+          right: 0;
+        }
+
+      }
+
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      //left: auto;
+      right: 0;
+      span {
+
+        &:nth-child(1) {
+          top: gem(110);
+          right: auto;
+          left: 0;
+          width: gem(35);
+          height: gem(20);
+        }
+
+        &:nth-child(2) {
+          width: gem(50);
+          height: gem(30);
+          top: 0;
+          right: gem(30);
+          left: auto;
+          top: gem(100);
+        }
+
+        &:nth-child(3) {
+          display: inline;
+          width: gem(55);
+          height: gem(35);
+          left: 0;
+          top: 50%;
+        }
+
+        &:nth-child(4) {
+          display: none;
+          //width: gem(75);
+          //height: gem(45);
+          //top: 50%;
+          //left: auto;
+          //right: 0;
+        }
+
+        &:nth-child(5) {
+          width: gem(55);
+          height: gem(35);
+          bottom: gem(60);
+          left: auto;
+          right: 0;
+        }
+
+        &:nth-child(6) {
+          width: gem(35);
+          height: gem(20);
+          top: gem(70);
+          right: gem(-20);
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @media (max-width: 767px) {
+    height: 100%;
+  }
+  @media (max-width: 767px) {
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      background: url('@img/coffee.png') no-repeat center  / contain;
+      //bottom: gem(25);
+    }
+    &::before {
+      width: gem(50);
+      height: gem(35);
+      top: gem(150);
+      right: gem(20);
+      transform: translateX(-50%) scale(-1, 1) rotate(-15deg);
+      animation: coffee-header 8s linear infinite;
+
+
+    }
+    &::after {
+      top: gem(120);
+      right: gem(10);
+      width: gem(35);
+      height: gem(20);
+      filter: blur(2px);
+      transform:  scale(-1, 1) rotate(45deg);
+    }
   }
 }
 
@@ -201,6 +410,7 @@
   }
 
 }
+
 @keyframes coffee-4 {
   0% {
     transform: scale(-1, 1) rotate(330deg);
@@ -224,7 +434,7 @@
 
 }
 
-@keyframes coffee-6 {
+@keyframes coffee-5 {
   0% {
     transform: rotate(340deg);
 
@@ -233,7 +443,7 @@
     transform: rotate(330deg);
   }
   50% {
-      transform: rotate(350deg);
+    transform: rotate(350deg);
   }
   75% {
     transform: rotate(330deg);
@@ -244,22 +454,23 @@
   }
 
 }
-@keyframes coffee-7 {
+
+@keyframes coffee-6 {
   0% {
-    transform: scale(-1,1) rotate(340deg);
+    transform: scale(-1, 1) rotate(340deg);
 
   }
   25% {
-    transform:scale(-1,1) rotate(330deg);
+    transform: scale(-1, 1) rotate(330deg);
   }
   50% {
-      transform:scale(-1,1) rotate(350deg);
+    transform: scale(-1, 1) rotate(350deg);
   }
   75% {
-    transform:scale(-1,1) rotate(330deg);
+    transform: scale(-1, 1) rotate(330deg);
   }
   100% {
-    transform:scale(-1,1) rotate(340deg);
+    transform: scale(-1, 1) rotate(340deg);
 
   }
 

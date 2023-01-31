@@ -1086,7 +1086,7 @@ button.swiper-pagination-bullet {
   :root {
     --line-height-h1: gem(62);
     --line-height-h2: gem(40);
-    --line-height-h2: gem(22)
+    --line-height-h3: gem(22)
   }
 }
 @media all and (max-width:480px) {
@@ -1143,7 +1143,7 @@ html {
   :root {
     --line-height-h1: 0.62rem;
     --line-height-h2: 0.4rem;
-    --line-height-h2: 0.22rem
+    --line-height-h3: 0.22rem
   }
 }
 @media all and (max-width:480px) {
@@ -1182,7 +1182,7 @@ html {
   :root {
     --line-height-h1: 0.62rem;
     --line-height-h2: 0.4rem;
-    --line-height-h2: 0.22rem
+    --line-height-h3: 0.22rem
   }
 }
 @media all and (max-width:480px) {
@@ -1221,7 +1221,7 @@ html {
   :root {
     --line-height-h1: 0.62rem;
     --line-height-h2: 0.4rem;
-    --line-height-h2: 0.22rem
+    --line-height-h3: 0.22rem
   }
 }
 @media all and (max-width:480px) {
@@ -1233,12 +1233,16 @@ html {
 .h1,
 h1 {
   font-size: var(--font-size-h1);
-  line-height: var(--line-height-h1)
+  line-height: var(--line-height-h1);
+  z-index: 5;
+  position: relative
 }
 .h2,
 h2 {
   font-size: var(--font-size-h2);
-  line-height: var(--line-height-h2)
+  line-height: var(--line-height-h2);
+  z-index: 1;
+  position: relative
 }
 .h4,
 h4 {
@@ -1358,7 +1362,7 @@ h4 {
   :root {
     --line-height-h1: 0.62rem;
     --line-height-h2: 0.4rem;
-    --line-height-h2: 0.22rem
+    --line-height-h3: 0.22rem
   }
 }
 @media all and (max-width:480px) {
@@ -1366,6 +1370,50 @@ h4 {
     --line-height-h1: 0.56rem;
     --line-height-h2: 0.38rem
   }
+}
+[class*=" icon-"],
+[class^=icon-] {
+  font-family: icomoon!important;
+  speak: never;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+.icon-gradient {
+  background: linear-gradient(180deg,#f2e6cf 0,#bcaa88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+}
+.icon-phone:before {
+  content: "\e900"
+}
+.icon-payment:before {
+  content: "\e901"
+}
+.icon-clock-fast:before {
+  content: "\e903"
+}
+.icon-coffee-maker:before {
+  content: "\e904"
+}
+.icon-interface:before {
+  content: "\e906"
+}
+.icon-message:before {
+  content: "\e907"
+}
+.icon-ic:before {
+  content: "\e908"
+}
+.icon-account:before {
+  content: "\e90a"
+}
+.icon-ruler-square:before {
+  content: "\e90b"
 }
 .container {
   padding: 0 calc(15px + 115 * ((100vw - 375px)/ 1065));
@@ -1663,7 +1711,7 @@ h4 {
     margin-left: 91.66666667%
   }
 }
-@media (min-width:992px) {
+@media (min-width:1025px) {
   .col-lg {
     flex: 1 0 0%
   }
@@ -1957,7 +2005,8 @@ h4 {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch
 }
 html {
   height: calc(var(--vh,1vh) * 100)
@@ -1971,8 +2020,7 @@ body {
   font-weight: 400;
   position: relative;
   color: #fff7e8;
-  background: url(../img/main-background.png) repeat center/cover,#1b1b1b;
-  transform: translate3d(0,0,0)
+  background: url(../img/main-background.png) repeat center/cover,#1b1b1b
 }
 body.active {
   overflow-y: hidden;
@@ -1991,7 +2039,9 @@ p {
 input,
 select,
 textarea {
-  cursor: pointer
+  cursor: pointer;
+  appearance: none;
+  border-radius: 0
 }
 ul {
   list-style: none;
@@ -2055,10 +2105,6 @@ a {
 a:hover {
   color: #00732e
 }
-.svg-sprite {
-  width: 0;
-  height: 0
-}
 .video {
   position: relative;
   padding-bottom: 56.25%;
@@ -2078,71 +2124,6 @@ a:hover {
   height: 100%;
   border-width: 0;
   outline-width: 0
-}
-@keyframes pulse {
-  0% {
-    transform: scale(.98)
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 .4rem 2rem rgba(40,125,3,.2)
-  }
-  100% {
-    transform: scale(.98);
-    box-shadow: 0 0 0 0 rgba(40,125,3,.2)
-  }
-}
-@keyframes opacity {
-  0% {
-    opacity: 0
-  }
-  100% {
-    opacity: 1
-  }
-}
-[class*=" icon-"],
-[class^=icon-] {
-  font-family: icomoon!important;
-  speak: never;
-  font-style: normal;
-  font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale
-}
-.icon-gradient {
-  background: linear-gradient(180deg,#f2e6cf 0,#bcaa88 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent
-}
-.icon-phone:before {
-  content: "\e900"
-}
-.icon-payment:before {
-  content: "\e901"
-}
-.icon-clock-fast:before {
-  content: "\e903"
-}
-.icon-coffee-maker:before {
-  content: "\e904"
-}
-.icon-interface:before {
-  content: "\e906"
-}
-.icon-message:before {
-  content: "\e907"
-}
-.icon-ic:before {
-  content: "\e908"
-}
-.icon-account:before {
-  content: "\e90a"
-}
-.icon-ruler-square:before {
-  content: "\e90b"
 }
 :root {
   --header-height: 1.08rem
@@ -2174,7 +2155,7 @@ a:hover {
   :root {
     --line-height-h1: 0.62rem;
     --line-height-h2: 0.4rem;
-    --line-height-h2: 0.22rem
+    --line-height-h3: 0.22rem
   }
 }
 @media all and (max-width:480px) {
@@ -2209,18 +2190,7 @@ a:hover {
   font-feature-settings: "pnum" on,"lnum" on
 }
 .header__icon {
-  background: linear-gradient(150.64deg,#009d3f 16.38%,#00732e 51.24%);
-  width: .5rem;
-  height: .5rem;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  border-radius: 50%
-}
-.header__icon span {
-  font-size: .35rem;
-  line-height: .35rem
+  display: none
 }
 .header__menu .header__logo {
   display: none
@@ -2240,12 +2210,11 @@ a:hover {
     flex-direction: column;
     top: .15rem;
     background: #5b5144;
-    right: -100vh;
     backdrop-filter: blur(4px);
     border-radius: .1rem 0 0 .1rem;
-    transition: right .35s linear .1s;
-    transform: translateZ(0);
-    z-index: 6
+    transition: transform .35s linear;
+    z-index: 6;
+    transform-style: preserve-3d
   }
   .header__menu::after,
   .header__menu::before {
@@ -2253,7 +2222,7 @@ a:hover {
     content: "";
     position: absolute;
     background: url(../img/coffee.png) no-repeat center/contain;
-    bottom: .65rem
+    bottom: .25rem
   }
   .header__menu::before {
     width: .5rem;
@@ -2261,6 +2230,13 @@ a:hover {
     transform: translateX(-50%) scale(-1,1) rotate(-15deg);
     animation: coffee-header 8s linear infinite
   }
+}
+@media (max-width:1024px) and (max-width:768px) {
+  .header__menu::before {
+    bottom: .65rem
+  }
+}
+@media (max-width:1024px) {
   .header__menu::after {
     bottom: 1rem;
     width: .35rem;
@@ -2278,7 +2254,21 @@ a:hover {
     top: 0;
     left: 0;
     content: "";
-    z-index: 5;
+    z-index: -1;
+    position: absolute;
+    opacity: 0;
+    transition: opacity .25s linear;
+    visibility: hidden
+  }
+  .header::after {
+    background: rgba(0,0,0,.8);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: -1;
     position: absolute;
     opacity: 0;
     transition: opacity .25s linear
@@ -2287,36 +2277,69 @@ a:hover {
     margin-left: 0;
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+    margin-top: auto
+  }
+  .header__contact .contact__item {
+    position: relative;
+    z-index: 2
   }
   .header__icon {
     display: inline-flex;
     margin-bottom: .15rem;
+    position: relative;
+    align-items: center;
+    justify-content: center;
     position: relative
   }
+  .header__icon span {
+    font-size: .35rem;
+    line-height: .35rem;
+    position: relative;
+    z-index: 1
+  }
+  .header__icon::after,
   .header__icon::before {
-    width: .9rem;
-    height: .9rem;
     top: 50%;
     left: 50%;
     content: "";
     position: absolute;
+    transform: translate(-50%,-50%)
+  }
+  .header__icon::before {
+    width: .9rem;
+    height: .9rem;
     filter: blur(75px);
     background-color: #fff7e8;
-    transform: translate(-50%,-50%);
     z-index: -1
   }
+  .header__icon::after {
+    background: linear-gradient(150.64deg,#009d3f 16.38%,#00732e 51.24%);
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    z-index: 0
+  }
   .header.--hide .header__menu {
-    right: -100vh
+    transform: translateX(100%) translate3d(0,0,0)
   }
   .header.--hide::before {
     opacity: 0
   }
   .header.--show .header__menu {
-    right: 0
+    transform: translateX(0) translate3d(0,0,0)
   }
   .header.--show::before {
+    opacity: 1;
+    visibility: visible
+  }
+  .header.--fixed::after {
     opacity: 1
+  }
+}
+@media (max-width:768px) {
+  .header__contact {
+    margin-top: 0
   }
 }
 @keyframes coffee-header {
@@ -2363,7 +2386,7 @@ a:hover {
   :root {
     --line-height-h1: 0.62rem;
     --line-height-h2: 0.4rem;
-    --line-height-h2: 0.22rem
+    --line-height-h3: 0.22rem
   }
 }
 @media all and (max-width:480px) {
@@ -2386,8 +2409,7 @@ a:hover {
 }
 .section {
   position: relative;
-  z-index: 0;
-  overflow: hidden
+  z-index: 0
 }
 .btn {
   text-decoration: none;
@@ -2459,7 +2481,8 @@ a:hover {
   right: .145rem;
   height: 3px;
   border-radius: 3px;
-  background: linear-gradient(180deg,#f2e6cf 0,#bcaa88 100%)
+  background: linear-gradient(180deg,#f2e6cf 0,#bcaa88 100%);
+  transform-style: preserve-3d
 }
 .burger span {
   transform: translate3d(0,0,0);
@@ -2479,7 +2502,7 @@ a:hover {
   transform: translate3d(0,0,0) translateY(6px)
 }
 .burger.active span {
-  transform: translate3d(0,0,0) rotate(45deg);
+  transform: translate3d(0,0,0);
   width: 0
 }
 .burger.active::before {
@@ -2501,7 +2524,7 @@ a:hover {
 }
 .main-screen {
   height: 100vh;
-  padding-top: var(--header-height)
+  padding: var(--header-height) 0 .6rem
 }
 .main-screen::before {
   width: 62.5%;
@@ -2514,12 +2537,32 @@ a:hover {
   background: url(../img/coffee-main-screen.png) no-repeat top/contain;
   z-index: 4
 }
+@media (max-width:1024px) {
+  .main-screen::before {
+    background: url(../img/coffee-main-screen-tablet.png) no-repeat center right/contain
+  }
+}
 .main-screen__wrapper {
   margin-top: .4rem
+}
+@media (max-width:1024px) {
+  .main-screen__wrapper {
+    margin-top: .2rem
+  }
+}
+@media (max-width:767px) {
+  .main-screen__wrapper {
+    margin-top: 0
+  }
 }
 .main-screen__info {
   position: relative;
   margin-top: 1rem
+}
+@media (max-width:1024px) {
+  .main-screen__info {
+    margin-top: .8rem
+  }
 }
 .main-screen__title {
   margin-bottom: .4rem
@@ -2547,10 +2590,70 @@ a:hover {
   height: 100%;
   z-index: 5
 }
+@media (max-width:1024px) {
+  .main-screen__img {
+    position: static
+  }
+  .main-screen__img .image {
+    position: absolute;
+    width: 6rem;
+    max-height: 8rem;
+    top: 1rem
+  }
+  .main-screen__img .image img {
+    object-position: left
+  }
+}
+@media (max-width:767px) {
+  .main-screen__img {
+    position: relative;
+    padding-top: 1rem
+  }
+  .main-screen__img::before {
+    height: 100%;
+    top: 0;
+    left: -.15rem;
+    right: -.15rem;
+    content: "";
+    position: absolute;
+    background: url(../img/coffee-main-screen-mobile.png) no-repeat center/contain
+  }
+  .main-screen__img .image {
+    width: 100%;
+    top: 0;
+    position: relative
+  }
+  .main-screen__img .image img {
+    object-position: center
+  }
+}
+@media (max-width:600px) {
+  .main-screen__img::before {
+    background-size: cover
+  }
+}
 .main-screen .elipse {
   top: 0;
   height: 100%;
   width: 100%
+}
+@media (max-width:1024px) {
+  .main-screen .elipse {
+    width: 5rem;
+    height: 5rem;
+    top: 50%;
+    right: 0;
+    transform: translate(50%,-50%)
+  }
+}
+@media (max-width:767px) {
+  .main-screen .elipse {
+    right: auto;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 3.5rem;
+    height: 3.5rem
+  }
 }
 .main-screen__decor {
   position: absolute;
@@ -2596,7 +2699,7 @@ a:hover {
   bottom: -.2rem;
   left: -.35rem;
   transform: rotate(340deg);
-  animation: coffee-6 6s linear infinite,drop-shadow 7s linear infinite
+  animation: coffee-5 6s linear infinite,drop-shadow 7s linear infinite
 }
 .main-screen__decor span:nth-child(6) {
   width: .55rem;
@@ -2604,7 +2707,120 @@ a:hover {
   top: -.6rem;
   right: -.35rem;
   transform: scale(-1,1);
-  animation: coffee-7 6s linear infinite,drop-shadow 7s linear infinite
+  animation: coffee-6 6s linear infinite,drop-shadow 7s linear infinite
+}
+@media (max-width:1024px) {
+  .main-screen__decor {
+    width: 50%;
+    left: auto;
+    right: 0
+  }
+  .main-screen__decor span:nth-child(1) {
+    top: 50%;
+    left: 20%;
+    width: .55rem;
+    height: .35rem
+  }
+  .main-screen__decor span:nth-child(2) {
+    width: .5rem;
+    height: .3rem;
+    top: 0;
+    left: 50%;
+    top: 1rem
+  }
+  .main-screen__decor span:nth-child(3) {
+    display: none
+  }
+  .main-screen__decor span:nth-child(4) {
+    width: .75rem;
+    height: .45rem;
+    top: 1.2rem;
+    left: 0;
+    right: auto
+  }
+  .main-screen__decor span:nth-child(5) {
+    width: .55rem;
+    height: .35rem;
+    bottom: .6rem;
+    left: 20%
+  }
+  .main-screen__decor span:nth-child(6) {
+    top: var(--header-height);
+    right: 0
+  }
+}
+@media (max-width:767px) {
+  .main-screen__decor {
+    width: 100%;
+    right: 0
+  }
+  .main-screen__decor span:nth-child(1) {
+    top: 1.1rem;
+    right: auto;
+    left: 0;
+    width: .35rem;
+    height: .2rem
+  }
+  .main-screen__decor span:nth-child(2) {
+    width: .5rem;
+    height: .3rem;
+    top: 0;
+    right: .3rem;
+    left: auto;
+    top: 1rem
+  }
+  .main-screen__decor span:nth-child(3) {
+    display: inline;
+    width: .55rem;
+    height: .35rem;
+    left: 0;
+    top: 50%
+  }
+  .main-screen__decor span:nth-child(4) {
+    display: none
+  }
+  .main-screen__decor span:nth-child(5) {
+    width: .55rem;
+    height: .35rem;
+    bottom: .6rem;
+    left: auto;
+    right: 0
+  }
+  .main-screen__decor span:nth-child(6) {
+    width: .35rem;
+    height: .2rem;
+    top: .7rem;
+    right: -.2rem
+  }
+}
+@media (max-width:767px) {
+  .main-screen {
+    height: 100%
+  }
+}
+@media (max-width:767px) {
+  .main-screen::after,
+  .main-screen::before {
+    content: "";
+    position: absolute;
+    background: url(../img/coffee.png) no-repeat center/contain
+  }
+  .main-screen::before {
+    width: .5rem;
+    height: .35rem;
+    top: 1.5rem;
+    right: .2rem;
+    transform: translateX(-50%) scale(-1,1) rotate(-15deg);
+    animation: coffee-header 8s linear infinite
+  }
+  .main-screen::after {
+    top: 1.2rem;
+    right: .1rem;
+    width: .35rem;
+    height: .2rem;
+    filter: blur(2px);
+    transform: scale(-1,1) rotate(45deg)
+  }
 }
 @keyframes coffee-1 {
   0% {
@@ -2671,7 +2887,7 @@ a:hover {
     transform: scale(-1,1) rotate(330deg)
   }
 }
-@keyframes coffee-6 {
+@keyframes coffee-5 {
   0% {
     transform: rotate(340deg)
   }
@@ -2688,7 +2904,7 @@ a:hover {
     transform: rotate(340deg)
   }
 }
-@keyframes coffee-7 {
+@keyframes coffee-6 {
   0% {
     transform: scale(-1,1) rotate(340deg)
   }

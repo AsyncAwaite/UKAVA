@@ -1,0 +1,318 @@
+.cooperation {
+  background: url('@img/cooperation-bg.png') no-repeat center  / contain;
+  @media (max-width: 1024px) {
+    background-repeat: repeat;
+  }
+
+  &__decor {
+    left: size(130, 15);
+    right: size(130, 15);
+
+    span {
+      position: absolute;
+      background: url('@img/coffee.png') no-repeat center  / contain;
+      z-index: 6;
+      width: gem(55);
+      height: gem(30);
+
+      &:nth-child(1) {
+        right: 0;
+        top: gem(75);
+        transform: translateX(100%) scale(-1, 1) rotate(-25deg);
+        animation: coffee-cooperation-1 8s linear infinite, drop-shadow 7s linear infinite;
+        @media (max-width: 767px){
+          width: gem(35);
+          height: gem(20);
+          top: gem(-40);
+          right: gem(10);
+        
+        }
+      }
+      &:nth-child(2){
+        width: gem(75);
+        height: gem(55);
+        right: gem(35);
+        top: gem(35);
+        transform: rotate(-15deg);
+        animation: coffee-cooperation-2 8s linear infinite, drop-shadow 7s linear infinite;
+        @media (max-width: 767px){
+          width: gem(50);
+          height: gem(30);
+          top: gem(-40);
+
+        }
+      }
+      &:nth-child(3) {
+        right: 0;
+        top: gem(155);
+        transform: scale(-1, 1) rotate(70deg);
+        animation: coffee-cooperation-3 8s linear infinite, drop-shadow 7s linear infinite;
+        @media (max-width: 767px){
+          width: gem(40);
+          height: gem(20);
+          top: gem(20);
+
+        }
+      }
+    }
+  }
+
+  &__img {
+    .image {
+      height: gem(320);
+      border-radius: 70px;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+      }
+
+      @media (max-width: 767px) {
+        height: gem(220);
+        margin-bottom: gem(30);
+      }
+
+
+    }
+
+    &-franchise {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: gem(20);
+
+      .image {
+        @media (max-width: 767px) {
+          border-radius: 40px;
+          height: gem(180);
+        }
+      }
+    }
+  }
+
+  h2 + .row {
+    margin-bottom: gem(60);
+    @media (max-width: 1024px) {
+      + .row {
+        .col-lg-6:first-child {
+          margin-bottom: gem(30);
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: gem(70);
+      + .row {
+        .col-lg-6:first-child {
+          order: 2;
+        }
+      }
+    }
+  }
+
+  &__place {
+    height: 100%;
+    padding: 0 gem(150) 0 gem(180);
+
+    @media (max-width: 1024px) {
+      padding: 0 gem(30);
+    }
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+
+
+  }
+
+  h4 {
+    margin-bottom: gem(15);
+
+    + div {
+      margin-bottom: gem(25);
+    }
+  }
+  .content{
+    position: relative;
+    z-index: 7;
+  }
+
+  &__franchise {
+    padding: 0 gem(100);
+    height: 100%;
+    @media (max-width: 1024px) {
+      padding: 0 gem(30);
+
+      order: 2;
+    }
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+    .decor{
+      width: 100%;
+      height: 100%;
+      span{
+        position: absolute;
+        background: url('@img/coffee.png') no-repeat center  / contain;
+        z-index: 6;
+        width: gem(85);
+        height: gem(45);
+        &:nth-child(1){
+          top: 0;
+          right: gem(70);
+          transform: scale(-1, 1) rotate(-25deg);
+          animation: coffee-cooperation-4 8s linear infinite, drop-shadow 7s linear infinite;
+          @media (max-width: 767px){
+            display: none;
+          }
+        }
+        &:nth-child(2){
+          top: 50%;
+          width: gem(50);
+          height: gem(30);
+          left: gem(10);
+          transform: translateY(-50%) scale(-1, 1) rotate(15deg);
+          //transform: scale(-1, 1) rotate(-25deg);
+          animation: coffee-cooperation-5 8s linear infinite, drop-shadow 7s linear infinite;
+          @media (max-width: 767px){
+            display: none;
+          }
+        }
+        &:nth-child(3){
+          width: gem(75);
+          height: gem(40);
+          left: gem(70);
+          bottom: gem(10);
+          transform: rotate(-35deg) ;
+          animation: coffee-cooperation-6 8s linear infinite, drop-shadow 7s linear infinite;
+          @media (max-width: 767px){
+            width: gem(50);
+            height: gem(30);
+            bottom: gem(-55);
+            left: gem(20);
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes coffee-cooperation-1 {
+  0% {
+    transform:  translateX(100%) scale(-1, 1) rotate(-25deg);
+
+  }
+  25% {
+    transform:  translateX(100%) scale(-1, 1) rotate(0deg);
+  }
+  50% {
+    transform:  translateX(100%) scale(-1, 1) rotate(-25deg);
+  }
+  75% {
+    transform: translateX(100%) scale(-1, 1) rotate(15deg);
+  }
+  100% {
+    transform:  translateX(100%) scale(-1, 1) rotate(-25deg);
+
+  }
+
+}
+@keyframes coffee-cooperation-2 {
+  0% {
+    transform: rotate(-15deg);
+
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+
+  }
+
+}
+@keyframes coffee-cooperation-3 {
+  0% {
+    transform: scale(-1, 1) rotate(70deg);
+
+  }
+  25% {
+    transform: scale(-1, 1) rotate(55deg);
+  }
+  50% {
+    transform: scale(-1, 1) rotate(70deg);
+  }
+  75% {
+    transform: scale(-1, 1) rotate(90deg);
+  }
+  100% {
+    transform: scale(-1, 1) rotate(70deg);
+
+  }
+
+}
+@keyframes coffee-cooperation-4 {
+  0% {
+    transform: scale(-1, 1) rotate(-25deg);
+
+  }
+  25% {
+    transform: scale(-1, 1) rotate(-5deg);
+  }
+  50% {
+    transform: scale(-1, 1) rotate(-25deg);
+  }
+  75% {
+    transform: scale(-1, 1) rotate(5deg);
+  }
+  100% {
+    transform: scale(-1, 1) rotate(-25deg);
+
+  }
+
+}
+@keyframes coffee-cooperation-5 {
+  0% {
+    transform: translateY(-50%) scale(-1, 1) rotate(25deg);
+
+  }
+  25% {
+    transform: translateY(-50%) scale(-1, 1) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-50%) scale(-1, 1) rotate(25deg);
+  }
+  75% {
+    transform: translateY(-50%) scale(-1, 1) rotate(45deg);
+  }
+  100% {
+    transform: translateY(-50%) scale(-1, 1) rotate(25deg);
+
+  }
+
+}
+@keyframes coffee-cooperation-6 {
+  0% {
+    transform: rotate(-35deg) ;
+
+  }
+  25% {
+    transform: rotate(-15deg) ;
+  }
+  50% {
+    transform: rotate(-35deg) ;
+  }
+  75% {
+    transform: rotate(-5deg) ;
+  }
+  100% {
+    transform: rotate(-35deg) ;
+
+  }
+
+}

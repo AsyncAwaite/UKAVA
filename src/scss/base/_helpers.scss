@@ -57,6 +57,9 @@ h4, .h4 {
   &-uppercase {
     text-transform: uppercase;
   }
+  &-center{
+    text-align: center;
+  }
 
   &-color {
     &--primary {
@@ -66,15 +69,22 @@ h4, .h4 {
       color: $darkGreen;
     }
   }
+  &--small{
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+  }
 }
 
-//ELIPSE
+//ELLIPSE
 
-.elipse {
+.ellipse {
   background: #5B5144;
   filter: blur(150px);
   border-radius: 50%;
   position: absolute;
+}
+.green-ellipse{
+  background: linear-gradient(150.64deg, #009D3F 16.38%, #00732E 51.24%);
 }
 
 .hide {

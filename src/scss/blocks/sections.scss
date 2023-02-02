@@ -5,6 +5,9 @@
   h2{
     margin-bottom: gem(60);
     font-weight: 600;
+    position: relative;
+    z-index: 10;
+    text-transform: uppercase;
     @media (max-width: 1024px){
       margin-bottom: gem(30);
     }

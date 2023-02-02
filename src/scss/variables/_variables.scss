@@ -14,12 +14,12 @@ $minWidth: 375;
   --header-height: #{gem(108)};
 }
 //
-//@media all and (max-width: 1024px) {
-//  :root {
-//    --container-width: #{gem(678)};
-//  }
-//
-//}
+@media all and (max-width: 1024px) {
+  :root {
+    --header-height: #{gem(68)};
+  }
+
+}
 //@media all and (max-width: 480px) {
 //  :root {
 //    --container-width: #{gem(345)};

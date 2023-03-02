@@ -23,7 +23,7 @@
     @media (max-width: 1024px) {
       margin-top: gem(20);
     }
-    @media (max-width: 767px){
+    @media (max-width: 767px) {
       margin-top: 0;
     }
   }
@@ -83,7 +83,7 @@
     @media (max-width: 767px) {
       position: relative;
       padding-top: gem(100);
-      &::before{
+      &::before {
         //width: 100%;
         height: 100%;
         top: 0;
@@ -105,8 +105,10 @@
 
       }
     }
-    @media (max-width: 600px){
-    &::before{  background-size: cover;}
+    @media (max-width: 600px) {
+      &::before {
+        background-size: cover;
+      }
 
     }
 
@@ -341,9 +343,173 @@
       width: gem(35);
       height: gem(20);
       filter: blur(2px);
-      transform:  scale(-1, 1) rotate(45deg);
+      transform: scale(-1, 1) rotate(45deg);
     }
   }
+
+  &_franchise {
+    h1 {
+      margin-bottom: gem(40);
+
+      div {
+        width: gem(85);
+        display: inline-block;
+        //height: var(--line-height-h2);
+        height: gem(30);
+        position: relative;
+
+        &::after {
+          width: 100%;
+          height: 3px;
+          top: 50%;
+          right: 0;
+          content: '';
+          position: absolute;
+          transform: translateY(-50%);
+          background-color: $bage;
+        }
+      }
+    }
+
+    &::before {
+      width: 50%;
+      background: url('@img/main-screen-franchise.png') no-repeat center  / contain;
+      z-index: 6;
+      @media (max-width: 1024px) {
+        content: none;
+      }
+    }
+
+    .main-screen {
+      &__decor {
+        .money {
+          width: gem(115);
+          height: gem(55);
+
+          position: absolute;
+          z-index: 6;
+
+          &-1 {
+            top: gem(225);
+            transform: rotate(35deg);
+            animation: money-1 6s linear infinite, drop-shadow 7s linear infinite;
+            background: url('@img/money-1.png') no-repeat center  / contain;
+          }
+
+          &-2 {
+            width: gem(130);
+            height: gem(60);
+            background: url('@img/money-2.png') no-repeat center  / contain;
+            top: gem(250);
+            animation: money-1 6s linear infinite, drop-shadow 7s linear infinite;
+            right: gem(-50);
+          }
+
+          &-3 {
+            width: gem(90);
+            height: gem(40);
+            background: url('@img/money-3.png') no-repeat center  / contain;
+            transform: rotate(-20deg);
+            animation: money-2 6s linear infinite, drop-shadow 7s linear infinite;
+            right: gem(20);
+            top: gem(30);
+          }
+
+          &-4 {
+            width: gem(90);
+            height: gem(40);
+            background: url('@img/money-3.png') no-repeat center  / contain;
+            transform: rotate(-20deg);
+            animation: money-2 6s linear infinite, drop-shadow 7s linear infinite;
+            //right: gem(20);
+            bottom: 0;
+            left: 20%;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          width: 100%;
+        }
+
+      }
+
+      &__img {
+
+        @media (max-width: 1024px) {
+          position: relative;
+          .image {
+            position: relative;
+            top: 0;
+            width: 100%;
+
+            img {
+              object-position: center;
+            }
+          }
+          &::before {
+            width: 100%;
+            background: url('@img/main-screen-franchise.png') no-repeat center/contain;
+            z-index: 6;
+            height: 100%;
+            top: 0;
+            left: 0;
+            content: '';
+            position: absolute;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      height: 100%;
+      .col-lg-7 {
+        margin-bottom: gem(50);
+      }
+      .ellipse {
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, 0)!important;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+@keyframes money-1 {
+  0% {
+    transform: rotate(35deg);
+
+  }
+  25% {
+    transform: rotate(25deg);
+  }
+
+  75% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(35deg);
+
+  }
+
+}
+
+@keyframes money-2 {
+  0% {
+    transform: rotate(-20deg);
+
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+
 }
 
 @keyframes coffee-1 {

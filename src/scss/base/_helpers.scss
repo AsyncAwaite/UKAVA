@@ -14,6 +14,7 @@ h2, .h2 {
   line-height: var(--line-height-h2);
   z-index: 1;
   position: relative;
+
 }
 h3, .h3 {
   font-size: var(--font-size-h3);
@@ -68,10 +69,15 @@ h4, .h4 {
     &--green{
       color: $darkGreen;
     }
+
   }
   &--small{
     font-size: var(--font-size-small);
     line-height: var(--line-height-small);
+  }
+  &--medium{
+    font-size: var(--font-size-medium);
+    line-height: var(--line-height-medium);
   }
 }
 
@@ -166,4 +172,5 @@ h4, .h4 {
 .pos-r {
   position: relative;
 }
+
 

@@ -9,7 +9,7 @@
 
 
 //@import "/node_modules/animate.css/animate.css";
-//@import "/node_modules/aos/dist/aos.css";
+@import "/node_modules/aos/dist/aos.css";
 //@import "/node_modules/bootstrap/dist/css/bootstrap-reboot.min.css";
 //@import "grid-bootstrap";
 @import "/node_modules/swiper/swiper-bundle.min.css";
@@ -33,6 +33,7 @@ html {
 
 body {
   font-family: Raleway;
+  font-feature-settings: "pnum" on,"lnum" on;
   min-height: -webkit-fill-available;
   margin: 0;
   font-size: gem(16);
@@ -40,7 +41,7 @@ body {
   font-weight: 400;
   position: relative;
   color: $bage;
-  background: url('@img/main-background.png') repeat center  / cover, #1B1B1B;
+  background: url('@img/main.png') repeat center  / cover, #1B1B1B;
 
   &.active {
     overflow-y: hidden;
@@ -88,7 +89,7 @@ button {
 
 
 .page-container {
-  overflow-x: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -141,6 +142,17 @@ svg {
     left: 0;
     object-fit: contain;
     object-position: center;
+    mix-blend-mode: multiply;
+  }
+  &_contain{
+    img{
+      object-fit: contain;
+    }
+  }
+  &_cover{
+    img{
+      object-fit: cover;
+    }
   }
 }
 

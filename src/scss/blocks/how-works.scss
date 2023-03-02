@@ -1,0 +1,183 @@
+.how-works {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(3.05rem, 1fr));
+    column-gap: 8.5%;
+    z-index: 2;
+    position: relative;
+    @media (max-width: 1199px) {
+      column-gap: 2.5%;
+    }
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      row-gap: gem(30);
+    }
+  }
+
+  &__item {
+    border: 1px solid #BCAA88;
+    border-radius: 5px;
+    padding: gem(20);
+    flex-wrap: nowrap;
+    width: 100%;
+
+    .h1 {
+      margin-right: gem(15);
+      font-feature-settings: "pnum" on, "lnum" on;
+    }
+
+    .h3 {
+      font-size: size(24, 18);
+      line-height: size(28, 22);
+    }
+
+    .decor {
+      height: 1px;
+      background-color: $bage;
+      width: gem(125);
+      top: 50%;
+      left: 10px;
+      transform: translate(-1.25rem, -50%);
+
+      &::before, &::after {
+        width: 3px;
+        height: 3px;
+        top: 50%;
+        left: 0;
+        content: '';
+        background-color: $bage;
+        border-radius: 50%;
+        transform: translate(0, -50%);
+        position: absolute;
+        @media (max-width: 1024px) {
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+      }
+
+      &::after {
+        right: 0;
+        left: auto;
+        @media (max-width: 1024px) {
+          top: auto;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+      }
+
+      &:last-child {
+        left: auto;
+        right: 10px;
+        transform: translate(1.25rem, -50%);
+        @media (max-width: 1199px) {
+          transform: translate(.6rem, -50%);
+        }
+        @media (max-width: 1024px) {
+          top: 0;
+          bottom: auto;
+          transform: translate(0, -.5rem);
+          right: gem(20);
+        }
+
+      }
+
+
+      @media (max-width: 1199px) {
+        width: gem(60);
+        transform: translate(-.6rem, -50%);
+
+      }
+      @media (max-width: 1024px) {
+        height: gem(60);
+        top: auto;
+        bottom: 0;
+        width: 1px;
+        left: gem(20);
+        transform: translate(0, .5rem);
+      }
+    }
+    .ellipse{
+      width: gem(260);
+      height: gem(140);
+      filter: blur(75px);
+      z-index: -1;
+    }
+    span{
+      position: absolute;
+      background: url('@img/coffee.png') no-repeat center  / contain;
+      z-index: 1;
+      &:nth-child(1){
+        width: gem(75);
+        height: gem(45);
+        top: gem(-35);
+        right: gem(10);
+        transform: translateY(-100%) scale(-1, 1) rotate(-25deg);
+        animation: how-coffee-1 6s linear infinite, drop-shadow 7s linear infinite;
+        @media (max-width: 767px){
+          width: gem(55);
+          height: gem(25);
+          top: gem(-5);
+          right: gem(30);
+        }
+      }
+      &:nth-child(2){
+        width: gem(55);
+        height: gem(25);
+        bottom: gem(-35);
+        left: gem(10);
+        transform: translateY(100%)  rotate(-15deg);
+        animation: how-coffee-2 6s linear infinite, drop-shadow 7s linear infinite;
+        @media (max-width: 767px){
+          width: gem(35);
+          height: gem(15);
+          bottom: 0;
+          left: gem(25);
+        }
+      }
+    }
+    @media (max-width: 767px){
+    justify-content: start;
+    }
+  }
+  &__decor{
+    background: url('@img/how-works-bg.png') no-repeat center  / contain;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+  }
+}
+
+@keyframes how-coffee-1 {
+  0% {
+    transform: translateY(-100%) scale(-1, 1) rotate(-25deg);
+  }
+  25% {
+    transform: translateY(-100%) scale(-1, 1) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-100%) scale(-1, 1) rotate(-25deg);
+  }
+  75% {
+    transform: translateY(-100%) scale(-1, 1) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(-100%) scale(-1, 1) rotate(-25deg);
+  }
+}
+@keyframes how-coffee-2 {
+  0% {
+    transform: translateY(100%)  rotate(-15deg);}
+  25% {
+    transform: translateY(100%)  rotate(0deg); }
+  50% {
+    transform: translateY(100%)  rotate(-15deg); }
+  75% {
+    transform: translateY(100%)  rotate(0deg); }
+  100% {
+    transform: translateY(100%)  rotate(-15deg); }
+}

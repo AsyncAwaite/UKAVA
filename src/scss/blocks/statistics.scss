@@ -1,0 +1,173 @@
+.statistics{
+  &__decor{
+    width: gem(400);
+    height: gem(215);
+    bottom: 0;
+    left: 16.66%;
+    content: '';
+    background: url('@img/statistics_bg.png') no-repeat center  / contain;
+    position: absolute;
+
+    span{
+      position: absolute;
+      background: url('@img/coffee.png') no-repeat center  / contain;
+      width: gem(50);
+      height: gem(30);
+      @media (max-width: 767px){
+        width: gem(40);
+        height: gem(20);
+      }
+      &:nth-child(1){
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(-1, 1) rotate(-20deg);
+        width: gem(70);
+        height: gem(40);
+        animation: coffee-statistics-1 6s linear infinite, drop-shadow 7s linear infinite;
+        @media (max-width: 767px){
+          left: auto;
+          right: gem(-30);
+          width: gem(60);
+          height: gem(30);
+        }
+      }
+      &:nth-child(2){
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+      animation: coffee-statistics-2 6s linear infinite, drop-shadow 7s linear infinite;
+        @media (max-width: 767px){
+          bottom: gem(40);
+
+        }
+      }
+      &:nth-child(3){
+        //left: 50%;
+        right: 0;
+        bottom: gem(30);
+        transform: scale(-1,1) rotate(45deg);
+        animation: coffee-statistics-3 6s linear infinite, drop-shadow 7s linear infinite;
+        @media (max-width: 767px){
+          bottom: gem(60);
+          right: gem(60);
+        }
+      }
+    }
+    @media (max-width: 767px){
+    bottom: auto;
+      top: 0;
+      left: 0;
+
+
+    }
+  }
+  &__quantity{
+    padding-left: gem(45);
+    @media (max-width: 767px){
+      padding-left: 0;
+    }
+    position: relative;
+    &::before{
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      content: '';
+      position: absolute;
+      background: #5B5144;
+      /* mini elipse blur */
+
+      filter: blur(75px);
+    }
+  }
+  .h3, h3{
+    font-size: size(24,12);
+    @media (max-width: 1024px){
+      font-size: 24px;
+
+    }
+  }
+  &__item{
+    position: relative;
+    z-index: 5;
+    .h3{
+      line-height: gem(28);
+    }
+    .image{
+      height: gem(247);
+    }
+    @media (max-width: 767px){
+    .h3{
+      width: 80%;
+      margin: 0 auto;
+
+    }
+    }
+  }
+  @media (max-width: 1024px){
+  .col-md-6{
+    margin-bottom: gem(40);
+  }
+  }
+}
+
+@keyframes coffee-statistics-1 {
+  0% {
+    transform: translate(-50%, -50%) scale(-1, 1) rotate(-20deg);
+
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(-1, 1) rotate(-10deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(-1, 1) rotate(-20deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(-1, 1) rotate(-30deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(-1, 1) rotate(-20deg);
+
+  }
+
+}
+@keyframes coffee-statistics-2 {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+
+  }
+  25% {
+    transform: translateX(-50%) rotate(15deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  75% {
+    transform:translateX(-50%) rotate(-15deg);
+  }
+  100% {
+    transform:translateX(-50%) rotate(0deg);
+
+  }
+
+}
+@keyframes coffee-statistics-3 {
+  0% {
+    transform: scale(-1,1) rotate(45deg);
+
+  }
+  25% {
+    transform: scale(-1,1) rotate(30deg);
+  }
+  50% {
+    transform: scale(-1,1) rotate(45deg);
+  }
+  75% {
+    transform: scale(-1,1) rotate(60deg);
+  }
+  100% {
+    transform: scale(-1,1) rotate(45deg);
+
+  }
+
+}

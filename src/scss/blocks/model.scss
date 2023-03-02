@@ -1,0 +1,26 @@
+.model {
+  h2 {
+    margin: gem(65) 0 gem(25);
+
+  }
+
+  .h3 {
+    margin-bottom: gem(15);
+  }
+
+  .image {
+    height: gem(420);
+    max-width: gem(500);
+    border-radius: gem(70);
+    margin: 0 auto;
+    overflow: hidden;
+    img{
+      @media (max-width: 1024px){
+      object-fit: cover;
+      }
+    }
+    @media (max-width: 767px){
+      height: gem(300);
+    }
+  }
+}

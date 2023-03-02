@@ -1,3 +1,81 @@
-.footer{
+.footer {
+  padding: gem(40) 0;
+  background-color: $darkGreen;
+
+  &__info {
+    //justify-content: space-around;
+    display: grid;
+    column-gap: 8.33%;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: gem(40);
+
+    &:nth-child(2) {
+      margin-bottom: 0;
+
+      a {
+        font-size: gem(14);
+        line-height: gem(16);
+        @media (max-width: 767px) {
+          margin-bottom: gem(20);
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+
+  &__nav {
+    li {
+      margin-bottom: gem(25);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: gem(25);
+    }
+  }
+
+  &__contacts {
+    div, a {
+      margin-bottom: gem(15);
+    }
+
+    a {
+      display: inline-block;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+
+    }
+
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    @media (max-width: 767px) {
+      display: flex;
+      justify-content: center;
+      margin-bottom: gem(30);
+    }
+  }
+
+  a {
+    &:hover {
+      color: #1B1B1B;
+    }
+  }
+
 
 }

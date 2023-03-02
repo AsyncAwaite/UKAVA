@@ -1,0 +1,39 @@
+.partners{
+  &__description-item{
+    font-size: gem(18);
+    line-height: gem(20);
+    span{
+      width: gem(30);
+      height: gem(30);
+      margin-right: gem(15);
+    }
+
+    margin-bottom: gem(10);
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &__item{
+    background: #FFF7E8;
+    border-radius: 5px;
+    height: gem(108);
+
+    padding: gem(20) gem(15);
+    .image{
+      height: 100%;
+    }
+    @media (max-width: 767px){
+      max-width: gem(285);
+      margin: 0 auto;
+    }
+  }
+  .col-md-6{
+    margin-bottom: gem(15);
+    &:last-child{
+      margin-bottom: 0;
+    }
+    @media (max-width: 767px){
+    margin-bottom: gem(25);
+    }
+  }
+}

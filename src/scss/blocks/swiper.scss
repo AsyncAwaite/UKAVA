@@ -1,0 +1,34 @@
+.swiper{
+  &-button{
+    width: gem(50);
+    height: gem(15);
+    &.next{
+      transform: scale(-1, 1);
+    }
+    &.swiper-button-disabled{
+      pointer-events: none;
+      opacity: .4;
+    }
+  }
+
+  &__nav{
+
+  }
+
+}
+.counter{
+  &__current{
+    padding-right: 10px;
+
+    &::after{
+      width: 6px;
+      height: 1px;
+      top: 50%;
+      right: 2px;
+      content: '';
+      position: absolute;
+      background-color: $bage;
+      transform: translateY(-50%);
+    }
+  }
+}

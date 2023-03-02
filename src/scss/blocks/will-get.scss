@@ -1,0 +1,62 @@
+.will-get{
+&__img{
+  height: gem(630);
+  .image{
+    height: 100%;
+    width: 100%;
+    img{
+
+      @media (max-width: 767px){
+        transition: transform .35s linear;
+        width: 300%;
+        object-position: left top;
+
+      }
+    }
+    @media (max-width: 767px){
+      height: calc(100% - 1.1rem);
+    }
+
+  }
+  @media (max-width: 1024px){
+    height: gem(420);
+  }
+  @media (max-width: 767px){
+    height: gem(600);
+  }
+  .ellipse{
+    width: size(500, 250);
+    height: size(500, 250);
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    @media (max-width: 767px){
+      width: 100%;
+      height: 100%;
+      left: auto;
+      right: -50%;
+      transform: translate(0, -50%);
+    }
+  }
+}
+  &__nav{
+    display: none;
+    width: 100%;
+    max-width: gem(300);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .text{
+      padding: gem(15) gem(30);
+      background: rgba(255, 247, 232, 0.1);
+      margin-bottom: gem(20);
+      backdrop-filter: blur(4px);
+      border-radius: 5px;
+    }
+    @media (max-width: 567px){
+      display: block;
+    }
+  }
+}

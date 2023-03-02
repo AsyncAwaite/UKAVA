@@ -7,8 +7,15 @@ export default function renderModalForm (arr){
         item.addEventListener('click', () => {
 
             modalsEvents(item)
-            new Modal(".modal__form").openModal();
-            new Form(".form-modal").init();
+
+            new Modal(".modal").openModal();
+            if (item.dataset.target == 'addons'){
+                new Form(".modal-addons__form").init();
+            }
+            if (item.dataset.target == 'business-plan'){
+                new Form(".form-business").init();
+            }
+
         })
     })
 }

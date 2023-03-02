@@ -10,6 +10,17 @@ body {
 
 
 }
+.logo {
+  width: gem(154);
+  height: gem(68);
+  z-index: 1;
+}
+.contact__item{
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+
+
 
 
 @import "blocks/header";
@@ -17,9 +28,20 @@ body {
 @import "blocks/btn";
 @import "blocks/main-screen";
 @import "blocks/about";
+@import "blocks/model";
+@import "blocks/will-get";
+@import "blocks/how-works";
 @import "blocks/advantages";
 @import "blocks/cooperation";
 @import "blocks/benefits";
+@import "blocks/partners";
+@import "blocks/reviews";
+@import "blocks/statistics";
+@import "blocks/form";
+@import "blocks/products";
+@import "blocks/text-page";
+@import "blocks/swiper";
+@import "blocks/footer";
 @import "blocks/modal";
 
 

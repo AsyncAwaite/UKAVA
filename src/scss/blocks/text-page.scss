@@ -1,0 +1,35 @@
+.text-page{
+  &__wrapper{
+    padding-top: gem(95);
+    p{
+      margin-bottom: gem(25);
+    }
+    h4{
+      margin-bottom: gem(15);
+      font-weight: 500;
+    }
+  }
+  &__decor{
+    width: gem(380);
+    height: gem(270);
+    right: size(130, 15);
+    top: gem(-95);
+    background: url('@img/text-page-bg.png') no-repeat center  / contain;
+    z-index: -1;
+  }
+  &__ellipse{
+    width: 5rem;
+    height: 5rem;
+    bottom: 0;
+    right: 0;
+    content: "";
+    position: absolute;
+    background: rgba(91,81,68,.8);
+    -webkit-filter: blur(150px);
+    filter: blur(150px);
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(15%,70%);
+    animation: blur 5s linear infinite;
+  }
+}

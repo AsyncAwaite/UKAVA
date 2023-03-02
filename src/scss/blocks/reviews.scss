@@ -1,0 +1,25 @@
+.reviews{
+  &-wrapper{
+    padding: 0 gem(100);
+    overflow: hidden;
+    @media (max-width: 1024px){
+      padding: 0 gem(50);
+    }
+    @media (max-width: 767px){
+      padding: 0 gem(35);
+    }
+  }
+  &__item{
+    //background: url('@img/iphon.png') no-repeat center  / contain;
+    height: gem(578);
+    .image{
+      height: 100%;
+    }
+  }
+  &-swiper{
+    margin-bottom: gem(35);
+  }
+  .counter{
+    margin: 0 gem(70);
+  }
+}

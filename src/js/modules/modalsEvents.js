@@ -2,19 +2,39 @@
 
 
 import {modal, modalBody} from "./elements.js";
+import {getElement, getElements} from "./helpers.js";
 
 export default function modalsEvents(target) {
-    if (target.hasAttribute('data-speaker-descr')) {
-        renderDescrModal(target);
+    if (target.dataset.target == 'addons') {
+        renderProductsModal(target)
+        getElements('.modal-addons__item').forEach(item => {
+            const minus = item.querySelector('.minus');
+            minus.classList.add('disabled')
+            const plus = item.querySelector('.plus');
+            const countParent = item.querySelector('.count').firstElementChild
+            let count = +countParent.innerHTML;
+            const startCount = +count;
+            const step = +item.querySelector('.quantity').dataset.step;
+            item.querySelector('[data-addons]').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+            minus.addEventListener('click', () => {
+                if (startCount !== count) {
+                    count -= step;
+                    countParent.innerHTML = count;
+                }
+                if (startCount == count) minus.classList.add('disabled');
+            })
+            plus.addEventListener('click', () => {
+                count += step;
+                countParent.innerHTML = count;
+                if (count > startCount && minus.classList.contains('disabled')) minus.classList.remove('disabled');
+            })
+
+        })
     }
-    if (target.hasAttribute('data-review')) {
-        renderReviewModal(target);
-    }
-    if (target.hasAttribute('data-form')) {
-        renderFormAnswer(target)
-    }
-    if (target.hasAttribute('data-trigger')) {
-        renderFormModal(target)
+    if (target.dataset.target == 'business-plan') {
+        renderBusinessPlanModal(target)
     }
     if (target.hasAttribute('data-form-question')) {
         renderFormAnswer(target);
@@ -23,303 +43,287 @@ export default function modalsEvents(target) {
 
 }
 
-function renderReviewModal(target) {
-    let {author, course, review} = reviews.find(({postId}) => postId == target.dataset.review);
-    modal.classList.add('modal__review');
-    modalBody.classList.add('review')
+function renderProductsModal(target) {
     modalBody.innerHTML = `
-            <div class="reviews-item bgc_ac txt-primary flex --dir-col ">
-        <div class="txt-medium  reviews-item__title mb-15">
-        <div>${!isEn ? 'Курс:' : 'Course:'}</div>
-    <div>${course}</div>
+       <div class="modal-addons">
+                <h2 class="text-uppercase f-weight--600">Оберіть що потрібно замовити</h2>
+                <form class="modal-addons__form form" data-form="Додаткові продукти">
+                    <div class="modal-addons__items flex --wrap --just-between">
+                        <div class="modal-addons__item  flex --align-center">
+                           <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Кава
+                            </div>
 </div>
-    <div class="reviews-item__text txt-sm mb-20">
-        ${review}
-
-
-
-    </div>
-    <div class="reviews-item__footer flex --just-end">
-
-        <div class="reviews-item__author fz__text">
-            ${author}
-            
-        </div>
-    </div>
-
-</div>
-            `
-    modalBody.nextElementSibling.innerHTML = `<svg class="icon">
-                <use xlink:href="#close"></use>
-            </svg>`
-}
-
-function renderDescrModal(target) {
-    let nameKey = !isEn ? 'name' : 'name_en';
-    let speaker = speakers.find(el => el[nameKey] === target.dataset.speakerDescr);
-    let name = !isEn ? speaker.name : speaker.name_en;
-    let descr = !isEn ? speaker.desr : speaker.desr_en;
-    modal.classList.add('modal__speaker-descr');
-    modalBody.classList.add('speaker')
-    modalBody.innerHTML = `
-            <div class="name">
-                ${name}
-            </div>
-            <div class="descr">
-             ${descr}
-            </div>   
-            `
-}
-
-function renderFormModal(target) {
-    let title = '';
-    switch (target.dataset.trigger) {
-        case 'singapoore':
-            title = '"Сінгапурська школа Державного управління"';
-            break;
-        case 'school-of-ministers':
-            title = '"Школа міністрів"';
-            break;
-        case 'charity':
-            title = '"Благодійність. Де і як шукати гроші на свої проєкти"';
-            break;
-        case 'volunteering-charity-money':
-            title = '"ВОЛОНТЕРСТВО. БЛАГОДІЙНІСТЬ. ГРОШІ."';
-            break;
-        case 'webinar':
-            title = '"Вебінар"';
-            break;
-        case 'webinar-new':
-            title = 'ГРОМАДСЬКІ ТА БЛАГОДІЙНІ ОРГАНІЗАЦІЇ: ЗВІТНІСТЬ та ОПОДАТКУВАННЯ';
-            break;
-        case 'webinar-type':
-            title = `"${target.dataset.lectionType}"`;
-            break;
-        case 'information-space':
-            title = '"Як влаштований інформпростір 21 століття"';
-            break;
-        case 'community':
-            title = '"Стійкість громад в умовах військової агресіі-modal-modal"';
-            break;
-        case 'webinar-reporting-organization':
-            title = '"ЗВІТУВАННЯ ГРОМАДСЬКИХ ТА БЛАГОДІЙНИХ ОРГАНІЗАЦІЙ. ГУМАНІТАРНА ДОПОМОГА: ОФОРМЛЕННЯ, ОБЛІК, ЗВІТНІСТЬ"';
-            break;
-        default:
-            title = 'з головної сторінки';
-            break
-    }
-    //
-    modal.classList.add('modal__form');
-    modalBody.classList.add('modal-form', 'bgc_ac')
-    let formTitle, formName, formSurname, formMob, formEmail, formBtn, formRegion, formWork, formRole, formActivity, formActivityItems, formSources;
-    if (!isEn) {
-        formTitle = 'Заповніть форму нижче';
-        formName = 'Імʼя';
-        formSurname = 'Прізвище';
-        formMob = 'Номер телефону';
-        formEmail = 'Email';
-        formBtn = 'відправити';
-        formRegion = 'Регіон';
-        formWork = "Місце роботи";
-        formRole = "Посада";
-        formActivity='Сфера діяльності';
-        formActivityItems='(ГО / БФ / БО)';
-        formSources = "Якими профільними джерелами інформації ви користуєтесь"
-    } else {
-        formTitle = 'COMPLETE THE FORM BELOW';
-        formName = 'Name';
-        formSurname = 'Surname';
-        formMob = 'Phone number';
-        formEmail = 'Email';
-        formBtn = 'SEND';
-        formRegion = 'Region';
-        formWork = "Workplace";
-        formRole = "Position"
-        formActivity='Field of activity';
-        formActivityItems='(NGO / CF / CO)';
-        formSources = "Sources of information you are using"
-
-    }
-    //
-    modalBody.innerHTML = `
-                  <h3 class="txt-white txt-upper">
-                  <span>${!isEn ? 'ЗалишАЙТЕ ЗАЯВКУ НА НАВЧАННЯ,' : 'Apply to study -'}</span><span>${!isEn ? 'щоб забронювати місце' : 'book participation'} </span>
-                  </h3>
-                  <form class="form form_bgc-ac form-modal"  data-form='Форма ${title}'>
-                        <h4 class="form__title txt-upper pos-r">
-                            ${formTitle}
-                        </h4>
-                        <div class="form__items">
-                            <div class="form__item">
-                                <input type="text" id="name-modal" name="name">
-                                <label for="name-modal">${formName}</label>
-                                <div class="form__message"></div>
-                            </div>
-                            <div class="form__item">
-                                <input type="text" id="surname-modal" name="surname">
-                                <label for="surname-modal">${formSurname}</label>
-                                <div class="form__message"></div>
-                            </div>
-                            <div class="form__item">
-                                <input type="text" id="tel" name="tel">
-                                <label for="tel" class="label__tel">${formMob}</label>
-                                <div class="form__message"></div>
-                            </div>
-                            <div class="form__item">
-                                <input type="text" id="email-modal" name="email">
-                                <label for="email-modal">${formEmail}</label>
-                                <div class="form__message"></div>
-                            </div>
-                            <div class="form__btn">
-                                <button class="btn" type="submit" data-form data-success="${target.dataset.trigger}">
-                                    <span class="txt-upper">
-                                    ${formBtn}
-                                    </span>
-                                </button>
+                            <div class="quantity flex --align-center" data-step="1">
+                                <div class="minus"></div>
+                                <div class="count"><span>1</span><span>кг</span></div>
+                                <div class="plus"></div>
                             </div>
                         </div>
-                  </form>
-    `;
+                        <div class="modal-addons__item  flex --align-center">
+                           <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Молоко
+                            </div>
+</div>
+                            <div class="quantity flex --align-center" data-step="1">
+                                <div class="minus"></div>
+                                <div class="count"><span>1</span><span>шт</span></div>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
+                        <div class="modal-addons__item  flex --align-center">
+                    <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Цукор
+                            </div>
+</div>
+                            <div class="quantity flex --align-center" data-step="1">
+                                <div class="minus"></div>
+                                <div class="count"><span>1</span><span>кг</span></div>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
 
-    if (target.dataset.trigger == 'webinar') {
-        modalBody.parentElement.classList.add('modal-webinar')
-        modalBody.innerHTML = `
-                  <h3 class="txt-white txt-upper">
-                  ${!isEn ? 'реєструйтесь для перегляду вебінару' : 'REGISTER TO WATCH WEBINAR'}
+                        <div class="modal-addons__item  flex --align-center">
+                           <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Какао
+                            </div>
+</div>
+                            <div class="quantity flex --align-center" data-step="1">
+                                <div class="minus"></div>
+                                <div class="count"><span>1</span><span>кг</span></div>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
+                        <div class="modal-addons__item  flex --align-center">
+                         <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Сироп солона карамель
+                            </div>
+</div>
+                            <div class="quantity flex --align-center" data-step="1">
+                                <div class="minus"></div>
+                                <div class="count"><span>1</span><span>шт</span></div>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
+                        <div class="modal-addons__item  flex --align-center">
+                         <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Сироп ваніль
+                            </div>
+</div>
+                            <div class="quantity flex --align-center" data-step="1">
+                                <div class="minus"></div>
+                                <div class="count"><span>1</span><span>шт</span></div>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
+                        <div class="modal-addons__item  flex --align-center">
+                           <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Сироп кокос
+                            </div>
+</div>
+                            <div class="quantity flex --align-center" data-step="1">
+                                <div class="minus"></div>
+                                <div class="count"><span>1</span><span>шт</span></div>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
+                        <div class="modal-addons__item  flex --align-center">
+                         <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Палички
+                            </div>
+                         </div>
+                            <div class="quantity flex --align-center" data-step="10">
+                                <div class="minus"></div>
+                                <div class="count"><span>50</span><span>шт</span></div>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
+                        <div class="modal-addons__item  flex --align-center">
+                <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Трубочки
+                            </div>
+</div>
+                            <div class="quantity flex --align-center" data-step="10">
+                                <div class="minus"></div>
+                                <div class="count"><span>50</span><span>шт</span></div>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
+                        <div class="modal-addons__item  flex --align-center">
+                          <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Кришка мала
+                            </div>
+</div>
+                            <div class="quantity flex --align-center" data-step="10">
+                                <div class="minus"></div>
+                                <div class="count"><span>50</span><span>шт</span></div>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
+                        <div class="modal-addons__item  flex --align-center">
+                         <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Кришка велика
+                            </div>
+</div>
+                            <div class="quantity flex --align-center" data-step="10">
+                                <div class="minus"></div>
+                                <div class="count"><span>50</span><span>шт</span></div>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
+                        <div class="modal-addons__item  flex --align-center">
+                <div data-addons>
+                            <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Стакан 185 мл
+                            </div>
+</div>
+                            <div class="quantity flex --align-center" data-step="10">
+                                <div class="minus"></div>
+                                <div class="count"><span>50</span><span>шт</span></div>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
+                        <div class="modal-addons__item  flex --align-center">
+                      <div   data-addons>          <div class="checkbox ">
+                                <svg class="icon">
+                                  <use xlink:href="#check"></use>
+                                </svg>
+                            </div>
+                            <div class="name">
+                                Стакан 340 мл
+                            </div></div>
                   
-                  </h3>
-                  <form class="form form_bgc-ac form-modal"  data-form='Форма ${title}'>
-                        <h4 class="form__title txt-upper pos-r">
-                        ${formTitle}
-
-                        </h4>
-
-                        <div class="form__items">
-                           <div class="form__item">
-                                <input type="text" id="name-modal" name="name">
-                                <label for="name-modal">${formName}</label>
-                                <div class="form__message"></div>
-                            </div>
-                            <div class="form__item">
-                                <input type="text" id="surname-modal" name="surname">
-                                <label for="surname-modal">${formSurname}</label>
-                                <div class="form__message"></div>
-                            </div>
-                            <div class="form__item">
-                                <input type="text" id="tel" name="tel">
-                                <label for="tel" class="label__tel">${formMob}</label>
-                                <div class="form__message"></div>
-                            </div>
-                            <div class="form__item">
-                                <input type="text" id="email-modal" name="email">
-                                <label for="email-modal">${formEmail}</label>
-                                <div class="form__message"></div>
-                            </div>
-                            
-                              <div class="form__item">
-                                <input type="text" id="region-modal" name="region">
-                                <label for="region-modal">${formRegion}</label>
-                                <div class="form__message"></div>
-
-                            </div>
-                            <div class="form__item">
-                                <input type="text" id="work-modal" name="work">
-                                <label for="work-modal">${formWork}</label>
-                                <div class="form__message"></div>
-
-                            </div>
-                            <div class="form__item">
-                                <input type="text" id="role-modal" name="role">
-                                <label for="role-modal">${formRole}</label>
-                                <div class="form__message"></div>
-
-                            </div>
-                            <div class="form__btn">
-                                <button class="btn" type="submit" data-form data-success="${target.dataset.trigger}">
-                                    <span class="txt-upper">
-                               ${formBtn}
-                                    </span>
-                                </button>
-
+                            <div class="quantity flex --align-center" data-step="10">
+                                <div class="minus"></div>
+                                <div class="count"><span>50</span><span>шт</span></div>
+                                <div class="plus"></div>
                             </div>
                         </div>
-                    </form>
-    `;
-    }
-    if (target.dataset.trigger == 'webinar-new' || target.dataset.trigger == 'webinar-reporting-organization') {
-
-        modalBody.parentElement.classList.add('modal-webinar')
-
-        modalBody.innerHTML = `
-                  <h3 class="txt-white txt-upper">
-                  ${target.dataset.trigger == 'webinar-reporting-organization' ? !isEn ? 'ЗАЛИШАЙТЕ ЗАЯВКУ НА НАВЧАННЯ ВЖЕ ЗАРАЗ' : ' APPLY TO STUDY NOW ' : !isEn ? 'реєструйтесь для перегляду вебінару' : 'REGISTER TO WATCH WEBINAR'}
-               
-
-                  </h3>
-                  <form class="form form_bgc-ac form-modal"  data-form='Форма ${title}'>
-                        <h4 class="form__title txt-upper pos-r">
-                          ${formTitle}
-
-                        </h4>
-
-                        <div class="form__items">
-                       <div class="form__item">
-                                <input type="text" id="name-modal" name="name">
-                                <label for="name-modal">${formName}</label>
-                                <div class="form__message"></div>
-                            </div>
-                            <div class="form__item">
-                                <input type="text" id="surname-modal" name="surname">
-                                <label for="surname-modal">${formSurname}</label>
-                                <div class="form__message"></div>
-                            </div>
-                            <div class="form__item">
-                                <input type="text" id="tel" name="tel">
-                                <label for="tel" class="label__tel">${formMob}</label>
-                                <div class="form__message"></div>
-                            </div>
-                            <div class="form__item">
-                                <input type="text" id="email-modal" name="email">
-                                <label for="email-modal">${formEmail}</label>
-                                <div class="form__message"></div>
-                            </div>
-                                <div class="form__item">
-                            <input type="text" id="organisation" name="organisation">
-                            <label for="organisation">
-                                <span>${formActivity}</span>
-                                <span class="txt-sm">${formActivityItems}</span>
-
-                            </label>
-                            <div class="form__message"></div>
-
-                        </div>
-
+                    </div>
+                    <div class="modal-addons__inputs">
                         <div class="form__item">
-                                <span>${formSources}
-                         </span>
-
-
-                            <textarea id="text"></textarea>
+                            <input type="text" id="name" name="name">
+                            <label for="name">Імʼя</label>
                             <div class="form__message"></div>
                         </div>
-                        
-                            <div class="form__btn">
-                                <button class="btn" type="submit" data-form data-success="${target.dataset.trigger}">
-                                    <span class="txt-upper">
-                                  ${formBtn}
-                                    </span>
-                                </button>
-
-                            </div>
+                        <div class="form__item">
+                            <input type="text" id="email" name="email">
+                            <label for="email">Email</label>
+                            <div class="form__message"></div>
                         </div>
-                        
-                    </form>
-    `;
-    }
-    modalBody.nextElementSibling.innerHTML = `<svg class="icon">
-                <use xlink:href="#close"></use>
-            </svg>`
+                        <div class="form__item">
+                            <input type="text" id="phone" name="phone">
+                            <label for="phone" class="none">Номер </label>
+                            <div class="form__message"></div>
+                        </div>
+                        <button class="btn"><span>ВІДПРАВИТИ</span></button>
+                    </div>
+
+
+                </form>
+            </div>
+          `
 }
+
+function renderBusinessPlanModal(target) {
+    modalBody.innerHTML = `
+       <div class="modal-business-plan">
+                 <form class="form form-business"  data-form="Форма: Отримати бізнес план">
+                                <h2>ЗАЛИШТЕ ЗАЯВКУ ТА ОТРИМАЙТЕ БІЗНЕС ПЛАН</h2>
+                                <div class="form__items">
+                                    <div class="form__item">
+                                        <input type="text" id="name" name="name">
+                                        <label for="name">Імʼя</label>
+                                        <div class="form__message"></div>
+                                    </div>
+                                    <div class="form__item">
+                                        <input type="text" id="email" name="email">
+                                        <label for="email">Email</label>
+                                        <div class="form__message"></div>
+                                    </div>
+                                    <div class="form__item">
+                                        <input type="text" id="phone" name="phone">
+                                        <label class="none" for="phone">Номер </label>
+                                        <div class="form__message"></div>
+                                    </div>
+                                    <button class="btn"><span>ВІДПРАВИТИ</span></button>
+                                </div>
+                            </form>
+            </div>
+          `
+}
+
 
 function renderFormAnswer(target) {
     modal.classList.add('modal__form-answer');

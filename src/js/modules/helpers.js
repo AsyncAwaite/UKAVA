@@ -22,9 +22,9 @@ function arrayToChunks(size, arr){
   return newArr
 }
 
-function removeActive(arr) {
+function removeActive(arr, clazz='active') {
   arr.forEach((item) => {
-    item.classList.remove("active");
+    item.classList.remove(clazz);
   });
 }
 function getElement(selector){
